@@ -1,0 +1,18 @@
+.bg-body-tertiary {
+  background-color: red;
+
+  .link_navigate {
+    text-decoration: none;
+    color: black;
+  }
+
+  .me-auto {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    margin-left: 50px;
+  }
+  .logo {
+    width: 280px;
+  }
+}

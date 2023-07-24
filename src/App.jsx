@@ -1,11 +1,14 @@
-import "./App.css";
-import Header from "./components/Header/Header";
+import "./App.scss";
+
+import MenuBar from "./components/MenuBar";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Header></Header>
-    </div>
+    <>
+      <MenuBar></MenuBar>
+      <Outlet />
+    </>
   );
 }
 

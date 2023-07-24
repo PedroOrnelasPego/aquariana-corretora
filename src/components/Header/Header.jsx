@@ -3,15 +3,12 @@ import "./Header.scss";
 const Header = () => {
   return (
     <header className="masthead">
-      <div className="container">
-        <div className="masthead-subheading">Welcome To Our Studio!</div>
-        <div className="masthead-heading text-uppercase">
-          Its Nice To Meet You
+        <div className="relative flex items-center flex-col justify-center text-center text-white font-bold text-shadow ">
+          <h1 className="header_title text-6xl md:text-7xl lg:text-8xl xl:text-8xl">
+            AQUARIANA
+          </h1>
+          <h3 className="header_title">Corretora & Administradora</h3>
         </div>
-        <a className="btn btn-primary btn-xl text-uppercase" href="#services">
-          Tell Me More
-        </a>
-      </div>
     </header>
   );
 };
