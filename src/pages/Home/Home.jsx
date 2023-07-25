@@ -3,7 +3,7 @@ import "./Home.scss";
 
 const Home = () => {
   return (
-    <div>
+    <div className="my-header">
       <div className="header">
         <Header></Header>
       </div>
@@ -12,6 +12,68 @@ const Home = () => {
           <h1 className="header_title text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Seguros
           </h1>
+        </div>
+        <div className="containerr">
+          <div className="container_seguros">
+            <div className="card_seguros">
+              <div className="imgBx"></div>
+              <div className="content_seguros">pedro</div>
+            </div>
+          </div>
+          <div className="container_seguros">
+            <div className="card_seguros">
+              <div className="imgBx"></div>
+              <div className="content_seguros">pedro</div>
+            </div>
+          </div>
+          <div className="container_seguros">
+            <div className="card_seguros">
+              <div className="imgBxr"></div>
+              <div className="content_seguros">pedro</div>
+            </div>
+          </div>
+          <div className="container_seguros">
+            <div className="card_seguros">
+              <div className="imgBx"></div>
+              <div className="content_seguros">pedro</div>
+            </div>
+          </div>
+          <div className="container_seguros">
+            <div className="card_seguros">
+              <div className="imgBx"></div>
+              <div className="content_seguros">pedro</div>
+            </div>
+          </div>
+          <div className="container_seguros">
+            <div className="card_seguros">
+              <div className="imgBxr"></div>
+              <div className="content_seguros">pedro</div>
+            </div>
+          </div>
+          <div className="container_seguros">
+            <div className="card_seguros">
+              <div className="imgBx"></div>
+              <div className="content_seguros">pedro</div>
+            </div>
+          </div>
+          <div className="container_seguros">
+            <div className="card_seguros">
+              <div className="imgBx"></div>
+              <div className="content_seguros">pedro</div>
+            </div>
+          </div>
+          <div className="container_seguros">
+            <div className="card_seguros">
+              <div className="imgBx"></div>
+              <div className="content_seguros">pedro</div>
+            </div>
+          </div>
+          <div className="container_seguros">
+            <div className="card_seguros">
+              <div className="imgBx"></div>
+              <div className="content_seguros">pedro</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
