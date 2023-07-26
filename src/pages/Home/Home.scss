@@ -9,6 +9,11 @@
   min-height: 70vh;
   flex-wrap: wrap;
 
+  span {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+  }
+
   .container_seguros {
     display: flex;
     justify-content: center;
@@ -24,13 +29,13 @@
     flex-direction: column;
     width: 200px;
     height: 200px;
-    background: #E0BB4D;
+    background: #e0bb4d;
     border-radius: 20px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
     gap: 50px 50px;
     margin: 100px 50px;
-    
-    .dual_seguros{
+
+    .dual_seguros {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;

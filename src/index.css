@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-    width: 8px; /* Largura da barra de rolagem */
-    mix-blend-mode: difference; /* Torna a barra de rolagem transparente */
-  }
+  width: 8px; /* Largura da barra de rolagem */
+  mix-blend-mode: difference; /* Torna a barra de rolagem transparente */
+}

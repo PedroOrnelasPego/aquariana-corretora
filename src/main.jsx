@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home";
 import Seguros from "./Pages/Seguros";
 import ErrorPage from "./Pages/ErrorPage";
+import Commodities from "./pages/Commodities/Commodities.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/seguros",
         element: <Seguros></Seguros>,
+      },
+      {
+        path: "/commodities",
+        element: <Commodities></Commodities>,
       },
     ],
   },
