@@ -1,18 +1,13 @@
 import { Card, Modal } from "react-bootstrap";
 import "./Commodities.scss";
 import { useState } from "react";
+import data from "./commoditiesData";
 
 const Commodities = () => {
-  const [showPetroModal, setShowPetroModal] = useState(false);
-  const [showMineralModal, setShowMineralModal] = useState(false);
+  const [showModal, setShowModal] = useState(null);
 
-  const handleClose = () => {
-    setShowPetroModal(false);
-    setShowMineralModal(false);
-  };
-
-  const handlePetroModalShow = () => setShowPetroModal(true);
-  const handleMineralModalShow = () => setShowMineralModal(true);
+  const handleClose = () => setShowModal(null);
+  const handleModalShow = (index) => setShowModal(index);
 
   return (
     <div>
@@ -23,6 +18,7 @@ const Commodities = () => {
           </h1>
         </div>
       </div>
+
       <div className="content">
         <div className="relative flex items-center flex-col justify-center text-center mt-10 font-bold text-shadow">
           <h1 className="header_title text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
@@ -39,51 +35,54 @@ const Commodities = () => {
           clientes, auxiliando na sua competitividade mercadológica. A oferta
           poderá variar de acordo com a disponibilidade de cada produto.
         </div>
+
+
+
+
+
+
+
+
+
+
+
         <div className="commodities_cards">
-          <Card className="w-60 h-60">
-            <Card.Body className="commodities_cards_content">
-              <button onClick={handlePetroModalShow}>
-                Derivados de Petróleo
-              </button>
-            </Card.Body>
+          {data.map((item, index) => (
+            <Card key={index} className="bg-#A5B4C4 w-60 h-60 flex justify-center items-center">
+              <Card.Img className="card_img" variant="top" src={item.imageSrc} alt={item.title} />
+              <Card.Body className="commodities_cards_content">
+                <button
+                  type="button"
+                  className="social_button"
+                  onClick={() => handleModalShow(index)}
+                >
+                  {item.title}
+                </button>
+              </Card.Body>
 
-            <Modal centered show={showPetroModal} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Derivados de Petróleo</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                Asfalto, combustíveis para aeronaves, combustíveis para navios,
-                coque, gasolina A, gasolina de aviação, GLP, lubrificante,
-                nafta, óleo combustível, óleo diesel, outros não energéticos,
-                parafina, querosene de aviação (QAV), querosene iluminante e
-                solvente.
-              </Modal.Body>
-              <Modal.Footer>
-                <button onClick={handleClose}>Close</button>
-              </Modal.Footer>
-            </Modal>
-          </Card>
-          <Card className="w-60 h-60">
-            <Card.Body className="commodities_cards_content">
-              <button onClick={handleMineralModalShow}>Minerais</button>
-            </Card.Body>
-
-            <Modal centered show={showMineralModal} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Minerais</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                Descritivo dos minerais que temos acesso, de forma mediata e
-                imediata, seja o mineral já extraído, mina ou projeto greenfield
-                (solo): Ouro: Minério de ferro Lítio Diamante: Platinóide
-                (cobre): projeto Niquel: Mina com projeto Ou outro mineral
-                específico, poderia ser feita uma busca.
-              </Modal.Body>
-              <Modal.Footer>
-                <button onClick={handleClose}>Close</button>
-              </Modal.Footer>
-            </Modal>
-          </Card>
+              <Modal centered show={showModal === index} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>
+                    {item.title}
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  {item.body.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </Modal.Body>
+                <Modal.Footer>
+                  <button
+                    type="button"
+                    className="social_button"
+                    onClick={handleClose}
+                  >
+                    Close
+                  </button>
+                </Modal.Footer>
+              </Modal>
+            </Card>
+          ))}
         </div>
       </div>
     </div>
