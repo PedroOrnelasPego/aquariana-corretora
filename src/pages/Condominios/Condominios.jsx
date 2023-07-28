@@ -1,6 +1,6 @@
 import "./Condominios.scss";
 import whatsapp from "../../assets/social/whatsapp.png";
-import { HiPhoneIncoming } from "react-icons/hi";
+import { HiPhone } from "react-icons/hi";
 
 const Condominios = () => {
   return (
@@ -74,7 +74,7 @@ const Condominios = () => {
         <div className="contato_condominio">
           <span className="mb-2 font-medium">Solicite sua cotação!</span>
           <p className="bg-transparent contato_condominio__button">
-            <HiPhoneIncoming className="text-black" size={22} />
+            <HiPhone className="text-black" size={22} />
             <span className="text-black">(31) 3344-5088</span>
           </p>
         </div>
