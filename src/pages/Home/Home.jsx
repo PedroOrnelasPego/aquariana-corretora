@@ -90,14 +90,13 @@ const Home = () => {
         </div>
       ),
       title: "Equipamentos Portáteis",
-      link: "",
+      link: "https://wwws.portoseguro.com.br/vendaonline/equipamentosportateis/home.ns?cod=e6b4027ef0f540bba9b8bf682284a239&utm_source=40418J&utm_medium=geradorLinks&utm_campaign=GeradordeLinks_M279YJ&utm_content=AQUARIANA_CORRETORA_E_ADIMINISTRADORA&origem=BELO_HORIZONTE",
     },
     {
       icon: <PiAirplaneTiltFill size={90} />,
       title: "Viagem",
       link: "https://wwws.portoseguro.com.br/vendaonline/viagem/home.ns?cod=2d11f370d2a34415b4d3f63149cbf9d2&utm_source=40418J&utm_medium=geradorLinks&utm_campaign=GeradordeLinks_M279YJ&utm_content=AQUARIANA_CORRETORA_E_ADIMINISTRADORA&origem=BELO_HORIZONTE",
     },
-    // Adicione outros objetos de seguro aqui...
   ];
 
   return (
