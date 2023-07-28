@@ -1,44 +1,48 @@
-.header {
-  margin-top: 100px;
-}
-
-.containerr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;
-  flex-wrap: wrap;
-
-  span {
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
+.home {
+  &__header {
+    margin-top: 100px;
   }
 
-  .container_seguros {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 100px 50px;
-    margin: 100px 50px;
-  }
-
-  .card_seguros {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 200px;
-    height: 200px;
-    background: #e0bb4d;
-    border-radius: 20px;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
-    gap: 50px 50px;
-    margin: 100px 50px;
-
-    .dual_seguros {
+  .seguros {
+    &__content {
       display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 70vh;
       flex-wrap: wrap;
-      gap: 20px;
+
+      span {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+      }
+
+      .container_seguros {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 100px 50px;
+        margin: 100px 50px;
+      }
+
+      .card_seguros {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 200px;
+        height: 200px;
+        background: #e0bb4d;
+        border-radius: 20px;
+        box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+        gap: 50px 50px;
+        margin: 100px 50px;
+
+        .dual_seguros {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+      }
     }
   }
 }
