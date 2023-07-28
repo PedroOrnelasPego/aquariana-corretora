@@ -8,6 +8,7 @@ import Home from "./Pages/Home";
 import Seguros from "./Pages/Seguros";
 import ErrorPage from "./Pages/ErrorPage";
 import Commodities from "./pages/Commodities/Commodities.jsx";
+import Condominios from "./pages/Condominios/Condominios.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/commodities",
         element: <Commodities></Commodities>,
+      },
+      {
+        path: "/condominios",
+        element: <Condominios></Condominios>,
       },
     ],
   },

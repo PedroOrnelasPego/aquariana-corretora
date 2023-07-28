@@ -1,0 +1,63 @@
+.condominios {
+  .condominios_header {
+    padding-top: 10rem;
+    padding-bottom: 22rem;
+    background-image: url("../../assets/background/condominios.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+
+    &__title {
+      text-shadow: 4px -2px 8px rgba(0, 0, 0, 0.562);
+      margin-top: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__paragrafo {
+      p {
+        margin-bottom: 20px;
+
+        span {
+          text-decoration: underline;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .conatiner_contato_condominio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+
+    .contato_condominio {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      &__button {
+        color: #fff;
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: green;
+        width: 220px;
+        height: 60px;
+        border-radius: 40px;
+        margin-bottom: 100px;
+      }
+    }
+  }
+}
