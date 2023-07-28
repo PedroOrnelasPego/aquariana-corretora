@@ -30,9 +30,9 @@ const MenuBar = () => {
                 id="basic-nav-dropdown"
                 active
               >
-                <NavDropdown.Item href="actin">Vendas</NavDropdown.Item>
+                <NavDropdown.Item href="actin">Aluguel</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="acton">Aluguel</NavDropdown.Item>
+                <NavDropdown.Item href="acton">Vendas</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link active href="condominios">
                 Condomínios
