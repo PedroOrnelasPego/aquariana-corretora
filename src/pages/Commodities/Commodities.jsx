@@ -2,6 +2,7 @@ import { Card, Modal } from "react-bootstrap";
 import "./Commodities.scss";
 import { useState } from "react";
 import data from "./commoditiesData";
+import commodities from "../../assets/commodities/Blank 3 Grids Collage.png";
 
 const Commodities = () => {
   const [showModal, setShowModal] = useState(null);
@@ -36,35 +37,25 @@ const Commodities = () => {
           poderá variar de acordo com a disponibilidade de cada produto.
         </div>
 
-
-
-
-
-
-
-
-
-
-
         <div className="commodities_cards">
           {data.map((item, index) => (
-            <Card key={index} className="bg-#A5B4C4 w-60 h-60 flex justify-center items-center">
-              <Card.Img className="card_img" variant="top" src={item.imageSrc} alt={item.title} />
-              <Card.Body className="commodities_cards_content">
-                <button
-                  type="button"
-                  className="social_button"
-                  onClick={() => handleModalShow(index)}
-                >
-                  {item.title}
-                </button>
-              </Card.Body>
+            <div key={index}>
+              <button type="button" onClick={() => handleModalShow(index)}>
+                <Card className="commodities_card w-60 h-60 flex justify-center items-center">
+                  <Card.Img
+                    className="card_img"
+                    src={item.imageSrc}
+                    alt={item.title}
+                  />
+                  <Card.Body className="commodities_card__content">
+                    {item.title}
+                  </Card.Body>
+                </Card>
+              </button>
 
               <Modal centered show={showModal === index} onHide={handleClose}>
                 <Modal.Header closeButton>
-                  <Modal.Title>
-                    {item.title}
-                  </Modal.Title>
+                  <Modal.Title>{item.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                   {item.body.map((paragraph, index) => (
@@ -81,9 +72,69 @@ const Commodities = () => {
                   </button>
                 </Modal.Footer>
               </Modal>
-            </Card>
+            </div>
           ))}
         </div>
+
+        <div></div>
+
+        <div className="relative flex items-center flex-col justify-center text-center mt-10 font-bold text-shadow">
+          <h1 className="mt-40 header_title text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+            Representações
+          </h1>
+        </div>
+
+        <div className="w-3/4 m-10">
+          Representamos grupos expressivos no mercado internacional, sendo o
+          canal principal de atendimento a demandas de produtos alimentícios na
+          América Latina, bem como na representação na venda de fertilizantes e
+          derivados do petróleo. Estamos sempre em busca constante dos melhores
+          fornecedores para atendimento dos nossos clientes, auxiliando-os na
+          competitividade mercadológica. Assim, garantimos o fortalecimento das
+          relações e o crescimento conjunto. Estamos sempre abertos a expansão!
+        </div>
+
+        <div className="relative flex items-center flex-col justify-center text-center mt-10 font-bold text-shadow">
+          <h1 className="mt-40 header_title text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+            Consultoria
+          </h1>
+        </div>
+
+        <div className="w-3/4 m-10">
+          Prestamos consultoria e apoio administrativo às empresas, alicerçados
+          por excelente consultoria jurídica, para que que se viabilize inserção
+          no comércio exterior e auxilio na capacitação da empresa para importar
+          e exportar, possibilitando o acesso ao mercado internacional.
+          Possuímos experiência com registro de produtos, marcas e patentes
+          propiciando licenciamento para agir no comércio exterior, de modo ágil
+          e eficaz. Fornecemos suporte, direcionamento técnico e administrativo
+          a empresas estrangeiras que tenham interesse em exportar seus produtos
+          para o Brasil, bem como seus respectivos registros junto aos órgãos
+          competentes, propiciando uma rápida inserção e dentro dos parâmetros
+          comerciais brasileiros.
+        </div>
+
+        <div className="fundos"></div>
+
+        <div className="relative flex items-center flex-col justify-center text-center mt-10 font-bold text-shadow">
+          <h1 className="mt-40 header_title text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+            Fundos de Investimentos
+          </h1>
+        </div>
+
+        <div className="w-3/4 m-10">
+          Temos parcerias com Fundos de investimentos, onde recebemos demandas
+          de leitura de mercados e apresentamos fornecedores para participação
+          de operações. Auxiliamos nossos clientes, que possuam necessidade de
+          aportes financeiros, a apresentar projetos. Viabilizamos e
+          aproximamos, para ganho em toda cadeia de negócio. Trabalhamos com
+          Fundos Nacionais e Estrangeiros.
+        </div>
+
+        <div className="commodities__img">
+          <img src={commodities} alt="" />
+        </div>
+        
       </div>
     </div>
   );
