@@ -49,7 +49,7 @@ const Home = () => {
   const segurosData = [
     {
       icon: <BiSolidBuildingHouse size={90} />,
-      title: "Seguro Condominio",
+      title: "Seguro Condomínio",
       link: "",
     },
     {
@@ -74,7 +74,7 @@ const Home = () => {
     },
     {
       icon: <FaMotorcycle size={90} />,
-      title: "Seguro de Motocicletas",
+      title: "Seguro de Moto",
       link: "https://wwws.portoseguro.com.br/vendaonline/moto/home.ns?cod=94ce9d65e9f64c52b55e8b177bff9ede&utm_source=40418J&utm_medium=geradorLinks&utm_campaign=GeradordeLinks_M279YJ&utm_content=AQUARIANA_CORRETORA_E_ADIMINISTRADORA&origem=BELO_HORIZONTE",
     },
     {

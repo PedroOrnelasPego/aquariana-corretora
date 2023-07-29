@@ -34,8 +34,10 @@ const MenuBar = () => {
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="acton">Vendas</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link active href="condominios">
-                Condomínios
+              <Nav.Link>
+                <NavLink className="link_navigate" to="condominios">
+                  Comdomínios
+                </NavLink>
               </Nav.Link>
               <Nav.Link>
                 <NavLink className="link_navigate" to="consorcios">
