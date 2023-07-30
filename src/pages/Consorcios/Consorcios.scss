@@ -1,0 +1,16 @@
+.consorcios {
+  .consorcios_header {
+    padding-top: 10rem;
+    padding-bottom: 22rem;
+    background-image: url("../../assets/background/consorcio_background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+
+    &__title {
+      text-shadow: 4px -2px 8px rgba(0, 0, 0, 0.562);
+      margin-top: 20px;
+    }
+  }
+}
