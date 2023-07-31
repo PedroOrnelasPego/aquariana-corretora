@@ -30,9 +30,21 @@ const MenuBar = () => {
                 id="basic-nav-dropdown"
                 active
               >
-                <NavDropdown.Item href="actin">Aluguel</NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Nav.Link>
+                    <NavLink className="link_navigate" to="imoveis-aluguel">
+                      Aluguel
+                    </NavLink>
+                  </Nav.Link>
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="acton">Vendas</NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Nav.Link>
+                    <NavLink className="link_navigate" to="imoveis-vendas">
+                      Vendas
+                    </NavLink>
+                  </Nav.Link>
+                </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link>
                 <NavLink className="link_navigate" to="condominios">

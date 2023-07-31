@@ -10,6 +10,8 @@ import ErrorPage from "./Pages/ErrorPage";
 import Commodities from "./pages/Commodities/Commodities.jsx";
 import Condominios from "./pages/Condominios/Condominios.jsx";
 import Consorcios from "./pages/Consorcios/Consorcios.jsx";
+import Aluguel from "./pages/Imoveis/Aluguel/Aluguel.jsx";
+import Vendas from "./pages/Imoveis/Vendas/Vendas.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/seguros",
         element: <Seguros />,
+      },
+      {
+        path: "/imoveis-aluguel",
+        element: <Aluguel />,
+      },
+      {
+        path: "/imoveis-vendas",
+        element: <Vendas />,
       },
       {
         path: "/condominios",
