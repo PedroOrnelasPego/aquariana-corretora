@@ -33,7 +33,7 @@ const imoveisAluguelData = [
   // Adicione outros objetos de imóveis aqui...
 ];
 
-const MAX_DESCRIPTION_LENGTH = 200; // Tamanho máximo da descrição
+const MAX_DESCRIPTION_LENGTH = 120; // Tamanho máximo da descrição
 
 const Aluguel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -112,7 +112,15 @@ const Aluguel = () => {
                 <div className="card__content">
                   <h3 className="text-xl font-bold mb-2">{imovel.title}</h3>
                   <hr className="my-2" />
-                  <p className="text-gray-600">{description}</p>
+                  <p className="card__content__text">{description}</p>
+                  <hr className="my-2" />
+                  <Button
+                    variant="secondary"
+                    className="w-full text-black"
+                    onClick={() => handleCardClick(imovel.id)}
+                  >
+                    Saiba mais!
+                  </Button>
                 </div>
               </animated.div>
             );
