@@ -16,5 +16,19 @@
 
   .aluguel_content {
   }
+}
 
+.card_imoveis {
+  width: 340px;
+  height: 450px;
+
+  &_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__image {
+      width: 280px;
+      max-height: 280px;
+    }
+  }
 }
