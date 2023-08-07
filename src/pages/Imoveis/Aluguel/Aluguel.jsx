@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSpring, animated } from "react-spring";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Carousel } from "react-bootstrap";
 import "./Aluguel.scss";
 import casa1 from "../../../assets/imoveis/aluguel/casa_jardim_montanhes.jpeg";
 import casa2 from "../../../assets/imoveis/aluguel/casa_teste.jpg";
@@ -16,7 +16,8 @@ const imoveisAluguelData = [
 
       "Ideal para investidor, com renda aproximadamente de aluguel de R$4.000,00 mensalmente.",
     ],
-    imageUrl: casa1,
+    imgCapa: casa1,
+    imgCarousel: [casa1, casa1, casa1, casa1, casa1],
   },
   {
     id: 2,
@@ -28,9 +29,9 @@ const imoveisAluguelData = [
 
       "Ideal para investidor, com renda aproximadamente de aluguel de R$4.000,00 mensalmente.",
     ],
-    imageUrl: casa2,
+    imgCapa: casa2,
+    imgCarousel: [casa2, casa2, casa2, casa2, casa2],
   },
-  // Adicione outros objetos de imóveis aqui...
 ];
 
 const MAX_DESCRIPTION_LENGTH = 120; // Tamanho máximo da descrição
@@ -102,9 +103,27 @@ const Aluguel = () => {
                 onMouseLeave={handleMouseLeave}
                 style={getCardSpring(imovel.id)}
               >
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={imovel.imgCarousel[0]} // Alteração aqui
+                    alt={imovel.title}
+                  />
+                  <Carousel.Caption>
+                    <h3>{imovel.title}</h3>
+                    <p>{description}</p>
+                    <Button
+                      variant="secondary"
+                      className="w-full text-black"
+                      onClick={() => handleCardClick(imovel.id)}
+                    >
+                      Saiba mais!
+                    </Button>
+                  </Carousel.Caption>
+                </Carousel.Item>
                 <div className="card_imoveis_content">
                   <img
-                    src={imovel.imageUrl}
+                    src={imovel.imgCapa}
                     alt={imovel.title}
                     className="card_imoveis_content__image"
                   />
@@ -128,10 +147,23 @@ const Aluguel = () => {
         </div>
       </div>
       <Modal show={isModalOpen} onHide={closeModal} centered>
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="black">
           <Modal.Title>{selectedImovel && selectedImovel.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {selectedImovel && (
+            <Carousel>
+              {selectedImovel.imgCarousel.map((img, index) => (
+                <Carousel.Item key={index}>
+                  <img
+                    className="d-block w-100"
+                    src={img}
+                    alt={selectedImovel.title}
+                  />
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          )}
           {selectedImovel &&
             selectedImovel.description.map((item, index) => (
               <p key={index}>{item}</p>
