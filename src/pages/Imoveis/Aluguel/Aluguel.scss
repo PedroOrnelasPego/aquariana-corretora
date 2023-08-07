@@ -13,16 +13,26 @@
       margin-top: 20px;
     }
   }
+}
 
-  .aluguel_content {
-
-    .carousel__content{
-      
-      .carousel__content__img{
-        
-      }
-    }
+.modal-body {
+  p {
+    margin: 20px 0;
   }
+}
+
+.carousel__content {
+  .carousel__content__img {
+    // width: 900px;
+    // height: 600px;
+    display: block;
+  }
+}
+
+.carousel-inner {
+  height: 500px;
+  display: flex;
+  align-items: center;
 }
 
 .card_imoveis {
@@ -41,8 +51,6 @@
       max-height: 280px;
     }
   }
-
-
 
   .card__content__text {
     height: 118px;

@@ -2,35 +2,7 @@ import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { Modal, Button, Carousel } from "react-bootstrap";
 import "./Aluguel.scss";
-import casa1 from "../../../assets/imoveis/aluguel/casa_jardim_montanhes.jpeg";
-import casa2 from "../../../assets/imoveis/aluguel/casa_teste.jpg";
-
-const imoveisAluguelData = [
-  {
-    id: 1,
-    title: "Jardim Montanhês",
-    description: [
-      "Casa de dois pavimentos independentes, sendo duas residências com 03 barracões fundos.",
-
-      "01 vaga de garagem livre e coberta que pertence ao primeiro pavimento.",
-
-      "Ideal para investidor, com renda aproximadamente de aluguel de R$4.000,00 mensalmente.",
-    ],
-    imgCapa: casa1,
-    imgCarousel: [casa1, casa1, casa1, casa1, casa1],
-  },
-  {
-    id: 2,
-    title: "Casa teste 2",
-    description: [
-      "Casa de dois pavimentos independentes, sendo duas residências com 03 barracões fundos.",
-
-      "01 vaga de",
-    ],
-    imgCapa: casa2,
-    imgCarousel: [casa2, casa2, casa2, casa2, casa2],
-  },
-];
+import imoveisAluguelData from "./imoveisAluguelData";
 
 const Aluguel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -136,7 +108,12 @@ const Aluguel = () => {
           })}
         </div>
       </div>
-      <Modal show={isModalOpen} onHide={closeModal} centered>
+      <Modal
+        show={isModalOpen}
+        onHide={closeModal}
+        centered
+        className="modal-lg"
+      >
         <Modal.Header>
           <Modal.Title>{selectedImovel && selectedImovel.title}</Modal.Title>
           <button
@@ -152,9 +129,9 @@ const Aluguel = () => {
           {selectedImovel && (
             <Carousel>
               {selectedImovel.imgCarousel.map((img, index) => (
-                <Carousel.Item key={index}>
+                <Carousel.Item className="carousel__content" key={index}>
                   <img
-                    className="d-block w-100"
+                    className="carousel__content__img"
                     src={img}
                     alt={selectedImovel.title}
                   />
@@ -164,14 +141,16 @@ const Aluguel = () => {
           )}
           <hr className="my-2" />
           {selectedImovel &&
-            selectedImovel.description.map((paragraph, index) => (
+            selectedImovel.description.map((item, index) => (
               <p key={index}>
-                {paragraph.split("\n").map((line, i) => (
-                  <React.Fragment key={i}>
-                    {line}
-                    <br />
-                  </React.Fragment>
-                ))}
+                {typeof item === "string"
+                  ? item.split("\n").map((line, i) => (
+                      <React.Fragment key={i}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ))
+                  : item}
               </p>
             ))}
         </Modal.Body>
