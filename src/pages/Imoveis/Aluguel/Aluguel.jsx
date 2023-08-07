@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { Modal, Button, Carousel } from "react-bootstrap";
 import "./Aluguel.scss";
@@ -25,16 +25,12 @@ const imoveisAluguelData = [
     description: [
       "Casa de dois pavimentos independentes, sendo duas residências com 03 barracões fundos.",
 
-      "01 vaga de garagem livre e coberta que pertence ao primeiro pavimento.",
-
-      "Ideal para investidor, com renda aproximadamente de aluguel de R$4.000,00 mensalmente.",
+      "01 vaga de",
     ],
     imgCapa: casa2,
     imgCarousel: [casa2, casa2, casa2, casa2, casa2],
   },
 ];
-
-const MAX_DESCRIPTION_LENGTH = 120; // Tamanho máximo da descrição
 
 const Aluguel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -86,13 +82,7 @@ const Aluguel = () => {
 
         <div className="gap-2.5 flex justify-center items-center m-20 flex-wrap">
           {imoveisAluguelData.map((imovel) => {
-            const truncatedDescription = imovel.description
-              .join(" ")
-              .substring(0, MAX_DESCRIPTION_LENGTH);
-            const description =
-              imovel.description.join(" ").length > MAX_DESCRIPTION_LENGTH
-                ? truncatedDescription + "..."
-                : imovel.description.join(" ");
+            const description = imovel.description.join(" ");
 
             return (
               <animated.div
@@ -106,7 +96,7 @@ const Aluguel = () => {
                 <Carousel.Item>
                   <img
                     className="d-block w-100"
-                    src={imovel.imgCarousel[0]} // Alteração aqui
+                    src={imovel.imgCarousel[0]}
                     alt={imovel.title}
                   />
                   <Carousel.Caption>
@@ -147,8 +137,16 @@ const Aluguel = () => {
         </div>
       </div>
       <Modal show={isModalOpen} onHide={closeModal} centered>
-        <Modal.Header closeButton className="black">
+        <Modal.Header>
           <Modal.Title>{selectedImovel && selectedImovel.title}</Modal.Title>
+          <button
+            type="button"
+            className="close text-black"
+            onClick={closeModal}
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
         </Modal.Header>
         <Modal.Body>
           {selectedImovel && (
@@ -164,15 +162,26 @@ const Aluguel = () => {
               ))}
             </Carousel>
           )}
+          <hr className="my-2" />
           {selectedImovel &&
-            selectedImovel.description.map((item, index) => (
-              <p key={index}>{item}</p>
+            selectedImovel.description.map((paragraph, index) => (
+              <p key={index}>
+                {paragraph.split("\n").map((line, i) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
+              </p>
             ))}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={closeModal}>
+          <button
+            className="border border-black rounded px-4 py-2"
+            onClick={closeModal}
+          >
             Fechar
-          </Button>
+          </button>
         </Modal.Footer>
       </Modal>
     </div>

@@ -15,6 +15,13 @@
   }
 
   .aluguel_content {
+
+    .carousel__content{
+      
+      .carousel__content__img{
+        
+      }
+    }
   }
 }
 
@@ -24,7 +31,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   &_content {
     display: flex;
     justify-content: center;
@@ -34,9 +41,23 @@
       max-height: 280px;
     }
   }
-  
+
+
+
   .card__content__text {
-    height: 110px;
+    height: 118px;
     margin: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card__content__text::after {
+    content: "...";
+    color: rgba(0, 0, 0, 0.377);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right, transparent, white 30%);
+    padding-left: 8px;
   }
 }
