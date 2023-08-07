@@ -36,6 +36,29 @@ const Aluguel = () => {
     });
   };
 
+  const renderImovelCarousel = (img, index) => (
+    <Carousel.Item className="carousel__content" key={index}>
+      <img
+        className="carousel__content__img"
+        src={img}
+        alt={selectedImovel.title}
+      />
+    </Carousel.Item>
+  );
+
+  const renderImovelDescription = (item, index) => (
+    <p key={index}>
+      {typeof item === "string"
+        ? item.split("\n").map((line, i) => (
+            <React.Fragment key={i}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))
+        : item}
+    </p>
+  );
+
   return (
     <div className="aluguel">
       <div className="aluguel_header">
@@ -55,11 +78,14 @@ const Aluguel = () => {
         <div className="gap-2.5 flex justify-center items-center m-20 flex-wrap">
           {imoveisAluguelData.map((imovel) => {
             const description = imovel.description.join(" ");
+            const isImovelHovered = hoveredCard === imovel.id;
 
             return (
               <animated.div
                 key={imovel.id}
-                className="card_imoveis bg-white shadow-lg rounded-lg p-4 max-w-sm m-2 cursor-pointer"
+                className={`card_imoveis bg-white shadow-lg rounded-lg p-4 max-w-sm m-2 cursor-pointer ${
+                  isImovelHovered ? "hovered" : ""
+                }`}
                 onClick={() => handleCardClick(imovel.id)}
                 onMouseEnter={() => handleMouseEnter(imovel.id)}
                 onMouseLeave={handleMouseLeave}
@@ -74,13 +100,6 @@ const Aluguel = () => {
                   <Carousel.Caption>
                     <h3>{imovel.title}</h3>
                     <p>{description}</p>
-                    <Button
-                      variant="secondary"
-                      className="w-full text-black"
-                      onClick={() => handleCardClick(imovel.id)}
-                    >
-                      Saiba mais!
-                    </Button>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <div className="card_imoveis_content">
@@ -94,15 +113,14 @@ const Aluguel = () => {
                   <h3 className="text-xl font-bold mb-2">{imovel.title}</h3>
                   <hr className="my-2" />
                   <p className="card__content__text">{description}</p>
-                  <hr className="my-2" />
-                  <Button
-                    variant="secondary"
-                    className="w-full text-black"
-                    onClick={() => handleCardClick(imovel.id)}
-                  >
-                    Saiba mais!
-                  </Button>
                 </div>
+                <Button
+                  variant="secondary"
+                  className="w-full text-black"
+                  onClick={() => handleCardClick(imovel.id)}
+                >
+                  Saiba mais!
+                </Button>
               </animated.div>
             );
           })}
@@ -128,31 +146,12 @@ const Aluguel = () => {
         <Modal.Body>
           {selectedImovel && (
             <Carousel>
-              {selectedImovel.imgCarousel.map((img, index) => (
-                <Carousel.Item className="carousel__content" key={index}>
-                  <img
-                    className="carousel__content__img"
-                    src={img}
-                    alt={selectedImovel.title}
-                  />
-                </Carousel.Item>
-              ))}
+              {selectedImovel.imgCarousel.map(renderImovelCarousel)}
             </Carousel>
           )}
           <hr className="my-2" />
           {selectedImovel &&
-            selectedImovel.description.map((item, index) => (
-              <p key={index}>
-                {typeof item === "string"
-                  ? item.split("\n").map((line, i) => (
-                      <React.Fragment key={i}>
-                        {line}
-                        <br />
-                      </React.Fragment>
-                    ))
-                  : item}
-              </p>
-            ))}
+            selectedImovel.description.map(renderImovelDescription)}
         </Modal.Body>
         <Modal.Footer>
           <button
