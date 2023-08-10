@@ -19,10 +19,8 @@ const MenuBar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link>
-                <NavLink className="link_navigate" to="seguros">
-                  Seguros
-                </NavLink>
+              <Nav.Link as={NavLink} className="link_navigate" to="seguros">
+                Seguros
               </Nav.Link>
               <NavDropdown
                 className="link_navigate"
@@ -31,35 +29,33 @@ const MenuBar = () => {
                 active
               >
                 <NavDropdown.Item>
-                  <Nav.Link>
-                    <NavLink className="link_navigate" to="imoveis-aluguel">
-                      Aluguel
-                    </NavLink>
+                  <Nav.Link
+                    as={NavLink}
+                    className="link_navigate"
+                    to="imoveis-aluguel"
+                  >
+                    Aluguel
                   </Nav.Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
-                  <Nav.Link>
-                    <NavLink className="link_navigate" to="imoveis-vendas">
-                      Vendas
-                    </NavLink>
+                  <Nav.Link
+                    as={NavLink}
+                    className="link_navigate"
+                    to="imoveis-vendas"
+                  >
+                    Vendas
                   </Nav.Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link>
-                <NavLink className="link_navigate" to="condominios">
-                  Comdomínios
-                </NavLink>
+              <Nav.Link as={NavLink} className="link_navigate" to="condominios">
+                Comdomínios
               </Nav.Link>
-              <Nav.Link>
-                <NavLink className="link_navigate" to="consorcios">
-                  Consórcios
-                </NavLink>
+              <Nav.Link as={NavLink} className="link_navigate" to="consorcios">
+                Consórcios
               </Nav.Link>
-              <Nav.Link>
-                <NavLink className="link_navigate" to="commodities">
-                  Commodities
-                </NavLink>
+              <Nav.Link as={NavLink} className="link_navigate" to="commodities">
+                Commodities
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -70,44 +66,3 @@ const MenuBar = () => {
 };
 
 export default MenuBar;
-/*
-
-<div>
-      <Navbar expand="xl" className="bg-body-tertiary">
-        <Container className="menuBar">
-          <Navbar.Brand>
-            <Nav.Link>
-              <Link to="/">
-                <img className="logo" src={logo} alt="" />
-              </Link>
-            </Nav.Link>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link>
-                <NavLink className="link_navigate" to="seguros">
-                  Seguros
-                </NavLink>
-              </Nav.Link>
-              <NavDropdown
-                className="link_navigate"
-                title="Imóveis"
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item href="actin">Vendas</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="acton">Aluguel</NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link active href="condominios">
-                Condomínios
-              </Nav.Link>
-              <Nav.Link href="consorcios">Consórcios</Nav.Link>
-              <Nav.Link href="commodities">Commodities</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
-
-      */

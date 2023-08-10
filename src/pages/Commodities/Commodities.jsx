@@ -2,7 +2,7 @@ import { Card, Modal } from "react-bootstrap";
 import "./Commodities.scss";
 import { useState } from "react";
 import data from "./commoditiesData";
-import commodities from "../../assets/commodities/Blank 3 Grids Collage.png";
+import commodities from "../../assets/commodities/coffe_gold_corn.png";
 
 const Commodities = () => {
   const [showModal, setShowModal] = useState(null);

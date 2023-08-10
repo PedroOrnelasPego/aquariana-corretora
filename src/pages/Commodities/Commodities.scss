@@ -2,7 +2,7 @@
   .commodities_header {
     padding-top: 10rem;
     padding-bottom: 22rem;
-    background-image: url("../../assets/background/pexels-mikhail-nilov-7731351.jpg");
+    background-image: url("../../assets/background/commodities.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center;
@@ -36,7 +36,7 @@
       flex-wrap: wrap;
       margin: 70px 0 0 0;
 
-      .commodities_card{
+      .commodities_card {
         background-color: #e0bb4d;
         border: none;
         box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.808);
@@ -51,12 +51,10 @@
           font-weight: 500;
         }
       }
-
-      
     }
   }
 
-  .commodities__img{
+  .commodities__img {
     display: flex;
     justify-content: center;
     align-items: center;
