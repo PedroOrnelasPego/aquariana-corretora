@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo/aquariana-logo.png";
-import "./Menubar.scss";
+import "./MenuBar.scss";
 
 const MenuBar = () => {
   return (
