@@ -41,7 +41,7 @@ const Commodities = () => {
           {data.map((item, index) => (
             <div key={index}>
               <button type="button" onClick={() => handleModalShow(index)}>
-                <Card className="commodities_card w-60 h-60 flex justify-center items-center">
+                <Card className="commodities_card flex justify-center items-center">
                   <Card.Img
                     className="card_img"
                     src={item.imageSrc}
