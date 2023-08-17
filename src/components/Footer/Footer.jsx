@@ -12,7 +12,12 @@ const Footer = ({ className }) => {
           <a href="" className="social_link">
             <img src={linkedin} alt="" />
           </a>
-          <a href="" className="social_link">
+          <a
+            target="_blank"
+            href="https://wa.me//5531989073087?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
+            rel="noopener noreferrer"
+            className="social_link"
+          >
             <img src={whatsapp} alt="" />
           </a>
           <a href="" className="social_link">
