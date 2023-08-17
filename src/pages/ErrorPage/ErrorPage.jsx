@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./ErrorPage.scss";
-import errorIMG from "../../assets/error/6325257.jpg";
+import errorIMG from "../../assets/error/error_404.jpg";
 import Button from "react-bootstrap/Button";
 
 const ErrorPage = () => {

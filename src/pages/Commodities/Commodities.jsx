@@ -2,7 +2,7 @@ import { Card, Modal } from "react-bootstrap";
 import "./Commodities.scss";
 import { useState } from "react";
 import data from "./commoditiesData";
-import commodities from "../../assets/commodities/Blank 3 Grids Collage.png";
+import commodities from "../../assets/commodities/coffe_gold_corn.png";
 
 const Commodities = () => {
   const [showModal, setShowModal] = useState(null);
@@ -22,7 +22,7 @@ const Commodities = () => {
 
       <div className="content">
         <div className="relative flex items-center flex-col justify-center text-center mt-10 font-bold text-shadow">
-          <h1 className="header_title text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Serviços
           </h1>
         </div>
@@ -41,7 +41,7 @@ const Commodities = () => {
           {data.map((item, index) => (
             <div key={index}>
               <button type="button" onClick={() => handleModalShow(index)}>
-                <Card className="commodities_card w-60 h-60 flex justify-center items-center">
+                <Card className="commodities_card flex justify-center items-center">
                   <Card.Img
                     className="card_img"
                     src={item.imageSrc}

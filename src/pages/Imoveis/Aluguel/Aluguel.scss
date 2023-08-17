@@ -1,0 +1,71 @@
+.aluguel {
+  .aluguel_header {
+    padding-top: 10rem;
+    padding-bottom: 22rem;
+    background-image: url("../../../assets/background/casa-aluguel.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+
+    &__title {
+      text-shadow: 4px -2px 8px rgba(0, 0, 0, 0.562);
+      margin-top: 20px;
+    }
+  }
+}
+
+.modal-body {
+  p {
+    margin: 20px 0;
+  }
+}
+
+.carousel__content {
+  .carousel__content__img {
+    // width: 900px;
+    // height: 600px;
+    display: block;
+  }
+}
+
+.carousel-inner {
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.card_imoveis {
+  width: 340px;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__image {
+      width: 250px;
+      max-height: 280px;
+    }
+  }
+
+  .card__content__text {
+    height: 118px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card__content__text::after {
+    content: "...";
+    color: rgba(0, 0, 0, 0.377);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right, transparent, white 30%);
+    padding-left: 8px;
+  }
+}
