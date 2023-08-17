@@ -1,10 +1,14 @@
-.masthead {
-  padding-top: 10rem;
+.home_header {
+  padding-top: 6rem;
   padding-bottom: 22rem;
-  color: #fff;
   background-image: url("../../assets/background/home-background.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center;
   background-size: cover;
+
+  &__title {
+    text-shadow: 4px -2px 8px rgba(0, 0, 0, 0.562);
+    margin-top: 20px;
+  }
 }
