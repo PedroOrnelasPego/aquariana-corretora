@@ -115,8 +115,8 @@ const Aluguel = () => {
                   <p className="card__content__text">{description}</p>
                 </div>
                 <Button
-                  variant="secondary"
-                  className="w-full text-black"
+                  variant="warning"
+                  className="w-full"
                   onClick={() => handleCardClick(imovel.id)}
                 >
                   Saiba mais!
@@ -132,16 +132,8 @@ const Aluguel = () => {
         centered
         className="modal-lg"
       >
-        <Modal.Header>
+        <Modal.Header closeButton>
           <Modal.Title>{selectedImovel && selectedImovel.title}</Modal.Title>
-          <button
-            type="button"
-            className="close text-black"
-            onClick={closeModal}
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
         </Modal.Header>
         <Modal.Body>
           {selectedImovel && (
@@ -154,12 +146,7 @@ const Aluguel = () => {
             selectedImovel.description.map(renderImovelDescription)}
         </Modal.Body>
         <Modal.Footer>
-          <button
-            className="border border-black rounded px-4 py-2"
-            onClick={closeModal}
-          >
-            Fechar
-          </button>
+          <Button onClick={closeModal}>Fechar</Button>
         </Modal.Footer>
       </Modal>
     </div>
