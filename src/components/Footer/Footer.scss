@@ -8,10 +8,6 @@
 footer {
   width: 100%;
   color: var(--color-neutral-40);
-  img {
-    max-width: 46px;
-    margin: 12px;
-  }
 
   .footer_copyright {
     display: flex;
@@ -25,6 +21,25 @@ footer {
     .social_midia {
       display: flex;
     }
-
   }
+}
+
+.social_link {
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  margin: 12px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.social_link img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social_link:hover img {
+  transform: scale(1.1);
 }

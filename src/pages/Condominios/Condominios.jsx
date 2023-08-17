@@ -32,7 +32,7 @@ const Condominios = () => {
             Como sabemos, o Código Civil, Art. 1.346 determina que:{" "}
             <span>
               &quot;É obrigatório o seguro de toda a edificação contra o risco
-              de incêndio ou destruição, total ou parcial,&quot;.
+              de incêndio ou destruição, total ou parcial&quot;.
             </span>{" "}
             O síndico é obrigado a contratar o seguro do condomínio sob pena de
             responder civil e criminalmente.
