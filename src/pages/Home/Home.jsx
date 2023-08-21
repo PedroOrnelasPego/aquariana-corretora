@@ -2,9 +2,11 @@ import React from "react";
 import Header from "../../components/Header";
 import { useSpring, animated } from "react-spring";
 import { ImMobile, ImTruck } from "react-icons/im";
-import { FaCar, FaMotorcycle, FaLaptop, FaCamera } from "react-icons/fa";
+import { FaCar, FaCamera } from "react-icons/fa";
+import { GiHorseHead } from "react-icons/gi";
 import { BiSolidBuildingHouse } from "react-icons/bi";
 import { PiAirplaneTiltFill } from "react-icons/pi";
+import { MdElderly, MdPets } from "react-icons/md";
 import { BsFillHeartPulseFill, BsFillHouseDoorFill } from "react-icons/bs";
 import "./Home.scss";
 
@@ -41,7 +43,7 @@ const Home = () => {
         onClick={handleCardClick}
       >
         {icon}
-        <span>{title}</span>
+        <span className="text-center">{title}</span>
       </animated.div>
     );
   };
@@ -50,16 +52,21 @@ const Home = () => {
     {
       icon: <BiSolidBuildingHouse size={90} />,
       title: "Seguro Condomínio",
-      link: "",
+      link: "whatsapp",
     },
     {
       icon: <BsFillHouseDoorFill size={90} />,
-      title: "Seguro Casa",
+      title: "Seguro Residêncial",
       link: "https://wwws.portoseguro.com.br/vendaonline/residencia/home.ns?cod=dd253b6d72c34073bfc776d870ed910d&utm_source=40418J&utm_medium=geradorLinks&utm_campaign=GeradordeLinks_M279YJ&utm_content=AQUARIANA_CORRETORA_E_ADIMINISTRADORA&origem=BELO_HORIZONTE",
     },
     {
-      icon: <ImMobile size={90} />,
-      title: "Celulares Novos",
+      icon: (
+        <div className="dual_seguros">
+          <ImMobile size={60} />
+          <FaCamera size={60} />
+        </div>
+      ),
+      title: "Celulares e Eletroportáteis",
       link: "http://porto.vc/RAMOS_ELEMENTARES_40418J",
     },
     {
@@ -73,9 +80,9 @@ const Home = () => {
       link: "https://wwws.portoseguro.com.br/vendaonline/automovel/home.ns?cod=75ccc1312d2c4b699389930b79d97c55&utm_source=40418J&utm_medium=geradorLinks&utm_campaign=GeradordeLinks_M279YJ&utm_content=AQUARIANA_CORRETORA_E_ADIMINISTRADORA&origem=BELO_HORIZONTE",
     },
     {
-      icon: <FaMotorcycle size={90} />,
-      title: "Seguro de Moto",
-      link: "https://wwws.portoseguro.com.br/vendaonline/moto/home.ns?cod=94ce9d65e9f64c52b55e8b177bff9ede&utm_source=40418J&utm_medium=geradorLinks&utm_campaign=GeradordeLinks_M279YJ&utm_content=AQUARIANA_CORRETORA_E_ADIMINISTRADORA&origem=BELO_HORIZONTE",
+      icon: <MdElderly size={90} />,
+      title: "Previdência Privada",
+      link: "whatsapp",
     },
     {
       icon: <BsFillHeartPulseFill size={90} />,
@@ -85,17 +92,17 @@ const Home = () => {
     {
       icon: (
         <div className="dual_seguros">
-          <FaLaptop size={60} />
-          <FaCamera size={60} />
+          <MdPets size={70} />
+          <GiHorseHead size={60} />
         </div>
       ),
-      title: "Equipamentos Portáteis",
-      link: "https://wwws.portoseguro.com.br/vendaonline/equipamentosportateis/home.ns?cod=e6b4027ef0f540bba9b8bf682284a239&utm_source=40418J&utm_medium=geradorLinks&utm_campaign=GeradordeLinks_M279YJ&utm_content=AQUARIANA_CORRETORA_E_ADIMINISTRADORA&origem=BELO_HORIZONTE",
+      title: "Seguro Pet's e Agronegócio",
+      link: "whatsapp",
     },
     {
       icon: <PiAirplaneTiltFill size={90} />,
       title: "Viagem",
-      link: "https://wwws.portoseguro.com.br/vendaonline/viagem/home.ns?cod=2d11f370d2a34415b4d3f63149cbf9d2&utm_source=40418J&utm_medium=geradorLinks&utm_campaign=GeradordeLinks_M279YJ&utm_content=AQUARIANA_CORRETORA_E_ADIMINISTRADORA&origem=BELO_HORIZONTE",
+      link: "whatsapp",
     },
   ];
 

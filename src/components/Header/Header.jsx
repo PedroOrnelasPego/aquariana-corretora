@@ -9,6 +9,7 @@ const Header = () => {
             AQUARIANA
           </h1>
           <h3 className="header_title">Corretora & Administradora</h3>
+          <h3 className="header_title">Seguros e Imóveis</h3>
         </div>
       </div>
     </header>
