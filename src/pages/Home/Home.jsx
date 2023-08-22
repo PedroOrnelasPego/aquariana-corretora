@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import { useSpring, animated } from "react-spring";
 import { ImMobile, ImTruck } from "react-icons/im";
 import { FaCar, FaCamera } from "react-icons/fa";
-import { GiHorseHead } from "react-icons/gi";
+import { GiCow } from "react-icons/gi";
 import { BiSolidBuildingHouse } from "react-icons/bi";
 import { PiAirplaneTiltFill } from "react-icons/pi";
 import { MdElderly, MdPets } from "react-icons/md";
@@ -93,7 +93,8 @@ const Home = () => {
       icon: (
         <div className="dual_seguros">
           <MdPets size={70} />
-          <GiHorseHead size={60} />
+          {/* <GiHorseHead size={60} /> */}
+          <GiCow size={80} />
         </div>
       ),
       title: "Seguro Pet's e Agronegócio",
