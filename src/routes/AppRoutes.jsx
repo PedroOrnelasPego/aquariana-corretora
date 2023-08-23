@@ -14,12 +14,12 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
-        <Route path="seguros" element={<Seguros />} />
-        <Route path="imoveis-aluguel" element={<Aluguel />} />
-        <Route path="imoveis-vendas" element={<Vendas />} />
-        <Route path="condominios" element={<Condominios />} />
-        <Route path="consorcios" element={<Consorcios />} />
-        <Route path="commodities" element={<Commodities />} />
+        <Route path="/seguros" element={<Seguros />} />
+        <Route path="/imoveis-aluguel" element={<Aluguel />} />
+        <Route path="/imoveis-vendas" element={<Vendas />} />
+        <Route path="/condominios" element={<Condominios />} />
+        <Route path="/consorcios" element={<Consorcios />} />
+        <Route path="/commodities" element={<Commodities />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
