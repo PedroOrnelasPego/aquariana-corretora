@@ -4,7 +4,7 @@ import casa2 from "../../../assets/imoveis/aluguel/casa_teste.jpg";
 
 const imoveisAluguelData = [
   {
-    id: 1,
+    id: "01",
     title: "Jardim Montanhês",
     description: [
       "Casa de dois pavimentos independentes, sendo duas residências com 03 barracões fundos.",
@@ -28,21 +28,21 @@ const imoveisAluguelData = [
         <strong>Preço:</strong> R$600.000,00
       </span>,
 
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!4v1691452218176!6m8!1m7!1sI_xgfivqBxQXzhlIC8_UCg!2m2!1d-19.91089089089778!2d-43.98249876271299!3f111.49787297625276!4f1.1830480985877472!5f0.7820865974627469"
-        width="100%"
-        height="320"
-        allowfullscreen=""
-        loading="lazy"
-        key={uuidv4()}
-        rel="noopener noreferrer"
-      ></iframe>,
+      // <iframe
+      //   src="https://www.google.com/maps/embed?pb=!4v1691452218176!6m8!1m7!1sI_xgfivqBxQXzhlIC8_UCg!2m2!1d-19.91089089089778!2d-43.98249876271299!3f111.49787297625276!4f1.1830480985877472!5f0.7820865974627469"
+      //   width="100%"
+      //   height="320"
+      //   allowfullscreen=""
+      //   loading="lazy"
+      //   key={uuidv4()}
+      //   rel="noopener noreferrer"
+      // ></iframe>,
     ],
     imgCapa: casa1,
     imgCarousel: [casa1, casa2, casa1, casa2, casa1],
   },
   {
-    id: 2,
+    id: "02",
     title: "Casa teste 2",
     description: [
       "Casa de dois pavimentos independentes, sendo duas residências com 03 barracões fundos.",

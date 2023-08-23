@@ -3,6 +3,7 @@ import { useSpring, animated } from "react-spring";
 import { Modal, Button, Carousel } from "react-bootstrap";
 import "./Aluguel.scss";
 import imoveisAluguelData from "./imoveisAluguelData";
+import ContactForm from "../../../components/ContactForm/ContactForm";
 
 const Aluguel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -110,7 +111,9 @@ const Aluguel = () => {
                   />
                 </div>
                 <div className="card__content">
-                  <h3 className="text-xl font-bold mb-2">{imovel.title}</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    {imovel.title} - {imovel.id}
+                  </h3>
                   <hr className="my-2" />
                   <p className="card__content__text">{description}</p>
                 </div>
@@ -144,6 +147,10 @@ const Aluguel = () => {
           <hr className="my-2" />
           {selectedImovel &&
             selectedImovel.description.map(renderImovelDescription)}
+          <hr className="my-2" />
+          <ContactForm
+            selectedImovelId={selectedImovel ? selectedImovel.id : null}
+          />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={closeModal}>Fechar</Button>
