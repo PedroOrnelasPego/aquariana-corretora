@@ -5,6 +5,7 @@ import "./Vendas.scss";
 import imoveisVendasData from "./imoveisVendasData";
 import ContactForm from "../../../components/ContactForm/ContactForm";
 import EmptyPropertyList from "../../../components/EmptyPropertyList";
+import { Helmet } from "react-helmet";
 
 const Vendas = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,13 +32,13 @@ const Vendas = () => {
 
   const getCardSpring = (id) => {
     const isHovered = hoveredCard === id;
-  
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const springProps = useSpring({
       transform: isHovered ? "scale(1.1)" : "scale(1)",
       zIndex: isHovered ? 1 : 0,
     });
-  
+
     return springProps;
   };
 
@@ -66,6 +67,12 @@ const Vendas = () => {
 
   return (
     <div className="vendas">
+      <Helmet>
+        <meta
+          name="description"
+          content="Encontre os melhores imóveis à venda. Consulte nossa lista de propriedades disponíveis e encontre a casa dos seus sonhos."
+        />
+      </Helmet>
       <div className="vendas_header">
         <div className="relative flex items-center flex-col justify-center text-center text-white font-bold">
           <h1 className="vendas_header__title text-6xl md:text-7xl lg:text-8xl xl:text-8xl">
