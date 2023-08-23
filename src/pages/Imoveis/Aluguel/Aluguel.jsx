@@ -5,6 +5,7 @@ import "./Aluguel.scss";
 import imoveisAluguelData from "./imoveisAluguelData";
 import ContactForm from "../../../components/ContactForm/ContactForm";
 import EmptyPropertyList from "../../../components/EmptyPropertyList";
+import { Helmet } from "react-helmet";
 
 const Aluguel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,13 +32,13 @@ const Aluguel = () => {
 
   const getCardSpring = (id) => {
     const isHovered = hoveredCard === id;
-  
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const springProps = useSpring({
       transform: isHovered ? "scale(1.1)" : "scale(1)",
       zIndex: isHovered ? 1 : 0,
     });
-  
+
     return springProps;
   };
 
@@ -66,6 +67,12 @@ const Aluguel = () => {
 
   return (
     <div className="aluguel">
+      <Helmet>
+        <meta
+          name="description"
+          content="Encontre as melhores opções de imóveis para alugar. Consulte nossa lista de propriedades disponíveis e encontre o lugar perfeito para morar."
+        />
+      </Helmet>
       <div className="aluguel_header">
         <div className="relative flex items-center flex-col justify-center text-center text-white font-bold">
           <h1 className="aluguel_header__title text-6xl md:text-7xl lg:text-8xl xl:text-8xl">
