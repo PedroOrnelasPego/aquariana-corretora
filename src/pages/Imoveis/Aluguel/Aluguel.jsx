@@ -4,6 +4,7 @@ import { Modal, Button, Carousel } from "react-bootstrap";
 import "./Aluguel.scss";
 import imoveisAluguelData from "./imoveisAluguelData";
 import ContactForm from "../../../components/ContactForm/ContactForm";
+import EmptyPropertyList from "../../../components/EmptyPropertyList";
 
 const Aluguel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,11 +31,14 @@ const Aluguel = () => {
 
   const getCardSpring = (id) => {
     const isHovered = hoveredCard === id;
+  
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    return useSpring({
+    const springProps = useSpring({
       transform: isHovered ? "scale(1.1)" : "scale(1)",
       zIndex: isHovered ? 1 : 0,
     });
+  
+    return springProps;
   };
 
   const renderImovelCarousel = (img, index) => (
@@ -77,56 +81,60 @@ const Aluguel = () => {
         </div>
 
         <div className="gap-2.5 flex justify-center items-center m-20 flex-wrap">
-          {imoveisAluguelData.map((imovel) => {
-            const description = imovel.description.join(" ");
-            const isImovelHovered = hoveredCard === imovel.id;
+          {imoveisAluguelData.length === 0 ? (
+            <EmptyPropertyList mensagem="Nenhum imóvel para alugar no momento." />
+          ) : (
+            imoveisAluguelData.map((imovel) => {
+              const description = imovel.description.join(" ");
+              const isImovelHovered = hoveredCard === imovel.id;
 
-            return (
-              <animated.div
-                key={imovel.id}
-                className={`card_imoveis bg-white shadow-lg rounded-lg p-4 max-w-sm m-2 cursor-pointer ${
-                  isImovelHovered ? "hovered" : ""
-                }`}
-                onClick={() => handleCardClick(imovel.id)}
-                onMouseEnter={() => handleMouseEnter(imovel.id)}
-                onMouseLeave={handleMouseLeave}
-                style={getCardSpring(imovel.id)}
-              >
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src={imovel.imgCarousel[0]}
-                    alt={imovel.title}
-                  />
-                  <Carousel.Caption>
-                    <h3>{imovel.title}</h3>
-                    <p>{description}</p>
-                  </Carousel.Caption>
-                </Carousel.Item>
-                <div className="card_imoveis_content">
-                  <img
-                    src={imovel.imgCapa}
-                    alt={imovel.title}
-                    className="card_imoveis_content__image"
-                  />
-                </div>
-                <div className="card__content">
-                  <h3 className="text-xl font-bold mb-2">
-                    {imovel.title} - {imovel.id}
-                  </h3>
-                  <hr className="my-2" />
-                  <p className="card__content__text">{description}</p>
-                </div>
-                <Button
-                  variant="warning"
-                  className="w-full"
+              return (
+                <animated.div
+                  key={imovel.id}
+                  className={`card_imoveis bg-white shadow-lg rounded-lg p-4 max-w-sm m-2 cursor-pointer ${
+                    isImovelHovered ? "hovered" : ""
+                  }`}
                   onClick={() => handleCardClick(imovel.id)}
+                  onMouseEnter={() => handleMouseEnter(imovel.id)}
+                  onMouseLeave={handleMouseLeave}
+                  style={getCardSpring(imovel.id)}
                 >
-                  Saiba mais!
-                </Button>
-              </animated.div>
-            );
-          })}
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      src={imovel.imgCarousel[0]}
+                      alt={imovel.title}
+                    />
+                    <Carousel.Caption>
+                      <h3>{imovel.title}</h3>
+                      <p>{description}</p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                  <div className="card_imoveis_content">
+                    <img
+                      src={imovel.imgCapa}
+                      alt={imovel.title}
+                      className="card_imoveis_content__image"
+                    />
+                  </div>
+                  <div className="card__content">
+                    <h3 className="text-xl font-bold mb-2">
+                      {imovel.title} - {imovel.id}
+                    </h3>
+                    <hr className="my-2" />
+                    <p className="card__content__text">{description}</p>
+                  </div>
+                  <Button
+                    variant="warning"
+                    className="w-full"
+                    onClick={() => handleCardClick(imovel.id)}
+                  >
+                    Saiba mais!
+                  </Button>
+                </animated.div>
+              );
+            })
+          )}
         </div>
       </div>
       <Modal

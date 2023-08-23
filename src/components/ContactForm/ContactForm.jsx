@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./ContactForm.scss";
-import { Button } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import PropTypes from "prop-types";
 
 const ContactForm = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   ContactForm.propTypes = {
     selectedImovelId: PropTypes.string,
@@ -26,6 +27,9 @@ const ContactForm = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Indicar que o formulário está sendo enviado
+    setIsSubmitting(true);
+
     // Dados do formulário
     const formData = new FormData(event.target);
 
@@ -46,12 +50,15 @@ const ContactForm = (props) => {
     } catch (error) {
       console.error("Erro ao enviar o formulário:", error);
     }
+
+    // Resetar o estado de envio após a conclusão
+    setIsSubmitting(false);
   };
 
   return (
     <div>
       {isSubmitted ? (
-        <p>Email enviado com sucesso!</p>
+        <p className="text-center">Email enviado com sucesso!</p>
       ) : (
         <form onSubmit={handleSubmit}>
           <input
@@ -77,8 +84,9 @@ const ContactForm = (props) => {
             name="phone"
             onChange={handlePhoneChange}
             maxLength="15"
+            required
           />
-          <input type="hidden" name="_captcha" value="false"></input>
+          <input type="hidden" name="_captcha" value="false" />
 
           <label htmlFor="message">Mensagem:</label>
           <textarea
@@ -89,7 +97,22 @@ const ContactForm = (props) => {
             required
           ></textarea>
 
-          <Button type="submit">Enviar Contato</Button>
+          <Button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <>
+                <Spinner
+                  as="span"
+                  animation="border"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                Enviando...
+              </>
+            ) : (
+              "Enviar Contato"
+            )}
+          </Button>
         </form>
       )}
     </div>
