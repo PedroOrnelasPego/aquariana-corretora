@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./ContactForm.scss";
 import { Button, Spinner } from "react-bootstrap";
 import PropTypes from "prop-types";
+import { formatPhoneNumber } from "../../../utils/formatPhoneNumber";
 
 const ContactForm = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -15,11 +16,7 @@ const ContactForm = (props) => {
     const input = event.target;
     const value = input.value;
 
-    const numericValue = value.replace(/\D/g, "");
-    const formattedValue = numericValue.replace(
-      /(\d{2})(\d{0,5})(\d{0,4})/,
-      "($1)$2-$3"
-    );
+    const formattedValue = formatPhoneNumber(value);
 
     input.value = formattedValue;
   };

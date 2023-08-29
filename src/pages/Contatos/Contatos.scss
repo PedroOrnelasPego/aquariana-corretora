@@ -1,0 +1,41 @@
+.contatos {
+    .contatos_header {
+      padding-top: 10rem;
+      padding-bottom: 22rem;
+      background-image: url("../../assets/background/consorcios.jpg");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center;
+      background-size: cover;
+  
+      &__title {
+        text-shadow: 4px -2px 8px rgba(0, 0, 0, 0.562);
+        margin-top: 20px;
+      }
+    }
+  
+    .card_contatos {
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      &__content {
+        width: 700px;
+      }
+  
+      &__form {
+        max-width: none;
+      }
+    }
+  
+    .radio-buttons {
+      display: flex;
+      margin: 20px 0;
+  
+      .card_contatos__form__check {
+        margin-right: 20px;
+      }
+    }
+  }
+  
