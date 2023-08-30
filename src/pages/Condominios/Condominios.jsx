@@ -63,6 +63,7 @@ const Condominios = () => {
             href="https://wa.me//5531989073087?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
             target="_blank"
             rel="noopener noreferrer"
+            className="no-underline"
           >
             <button className="contato_condominio__button">
               Solicite sua cotação!
@@ -87,6 +88,7 @@ const Condominios = () => {
             href="https://wa.me//5531989073087?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
             target="_blank"
             rel="noopener noreferrer"
+            className="no-underline"
           >
             <button className="contato_condominio__button">
               Solicite sua cotação!

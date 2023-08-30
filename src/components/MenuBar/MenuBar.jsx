@@ -56,6 +56,9 @@ const MenuBar = () => {
             <Nav.Link as={NavLink} className="link_navigate" to="/commodities">
               Commodities
             </Nav.Link>
+            <Nav.Link as={NavLink} className="link_navigate" to="/contatos">
+              Contatos
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

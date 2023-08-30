@@ -8,6 +8,7 @@ import Condominios from "../pages/Condominios";
 import Consorcios from "../pages/Consorcios";
 import Aluguel from "../pages/Imoveis/Aluguel";
 import Vendas from "../pages/Imoveis/Vendas";
+import Contatos from "../pages/Contatos";
 
 function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ function AppRoutes() {
         <Route path="/condominios" element={<Condominios />} />
         <Route path="/consorcios" element={<Consorcios />} />
         <Route path="/commodities" element={<Commodities />} />
+        <Route path="/contatos" element={<Contatos />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
