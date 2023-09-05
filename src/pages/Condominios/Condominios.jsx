@@ -60,7 +60,7 @@ const Condominios = () => {
             Dr Josimar Bezerra ( Diretor executivo )
           </span>
           <a
-            href="https://wa.me//5531989073087?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
+            href="https://wa.me//5531996881200?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
             target="_blank"
             rel="noopener noreferrer"
             className="no-underline"
@@ -85,7 +85,7 @@ const Condominios = () => {
             Sibele Sevilhano ( Diretora comercial )
           </span>
           <a
-            href="https://wa.me//5531989073087?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
+            href="https://wa.me//5531984524218?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20servi%C3%A7os.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
             target="_blank"
             rel="noopener noreferrer"
             className="no-underline"
