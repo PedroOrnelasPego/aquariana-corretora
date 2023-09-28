@@ -18,11 +18,11 @@ const MenuBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link hidden as={NavLink} className="link_navigate" to="/seguros">
+            <Nav.Link as={NavLink} className="link_navigate" to="/seguros">
               Seguros
             </Nav.Link>
             <Nav.Link as={NavLink} className="link_navigate" to="/condominios">
-              Condomínios
+              Seguro Condominial
             </Nav.Link>
             <NavDropdown
               className="link_navigate"
@@ -50,7 +50,12 @@ const MenuBar = () => {
                 </Nav.Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link hidden as={NavLink} className="link_navigate" to="/consorcios">
+            <Nav.Link
+              hidden
+              as={NavLink}
+              className="link_navigate"
+              to="/consorcios"
+            >
               Consórcios
             </Nav.Link>
             <Nav.Link as={NavLink} className="link_navigate" to="/commodities">
