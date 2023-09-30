@@ -3,11 +3,13 @@ import "./Home.scss";
 const Home = () => {
   return (
     <div className="home">
-      <div className="seguros">
-        <div className="relative flex items-center flex-col justify-center text-center mt-20 font-bold text-shadow">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-            Segurssos
+      <div className="home_header">
+        <div className="relative flex items-center flex-col justify-center text-center text-white font-bold">
+          <h1 className="home_header__title text-6xl md:text-7xl lg:text-8xl xl:text-8xl">
+            AQUARIANA
           </h1>
+          <h3>Corretora & Administradora</h3>
+          <h3> Seguros e Imóveis</h3>
         </div>
       </div>
     </div>
