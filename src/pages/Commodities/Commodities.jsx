@@ -14,8 +14,8 @@ const Commodities = () => {
     <div className="commodities">
       <div className="commodities_header">
         <div className="relative flex items-center flex-col justify-center text-center text-white font-bold">
-          <h1 className="commodities_header__title text-6xl md:text-7xl lg:text-8xl xl:text-8xl">
-            AQUARIANA COMMODITIES
+          <h1 className="commodities_header__title text-5xl md:text-7xl lg:text-8xl xl:text-8xl">
+            COMMODITIES
           </h1>
         </div>
       </div>
