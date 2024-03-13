@@ -1,17 +1,20 @@
 .home {
-    .home_header {
-      padding-top: 10rem;
-      padding-bottom: 22rem;
-      background-image: url("../../assets/background/home.jpg");
-      background-repeat: no-repeat;
-      background-attachment: scroll;
-      background-position: center;
-      background-size: cover;
-  
-      &__title {
-        text-shadow: 4px -2px 8px rgba(0, 0, 0, 0.562);
-        margin-top: 20px;
-      }
+  .home-title {
+    text-shadow: 4px -2px 8px rgba(0, 0, 0, 0.562);
+    
+  }
+
+  &__header {
+    position: relative;
+
+    &__container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      text-align: center;
+      color: white;
     }
   }
-  
+}

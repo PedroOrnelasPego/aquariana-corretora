@@ -8,7 +8,7 @@ import "./MenuBar.scss";
 
 const MenuBar = () => {
   return (
-    <Navbar fixed="top" expand="xl" className="navbar bg-body-tertiary">
+    <Navbar sticky="top" expand="xl" className="navbar bg-body-tertiary">
       <Container className="menuBar">
         <Navbar.Brand>
           <Link to="/" className="logo-link">
