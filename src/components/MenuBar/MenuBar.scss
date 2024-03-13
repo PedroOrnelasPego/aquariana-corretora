@@ -7,8 +7,16 @@
   .me-auto {
     display: flex;
     justify-content: space-between;
-    gap: 80px;
-    margin-left: 50px;
+  
+    
+
+    a{
+      margin-left: 80px;
+    }
+  }
+
+  .navbar-collapse{
+
   }
   .logo {
     width: 280px;
