@@ -7,7 +7,7 @@ const Condominios = () => {
     <div className="condominios">
       <div className="condominios_header">
         <div className="relative flex items-center flex-col justify-center text-center text-white font-bold">
-          <h1 className="condominios_header__title text-6xl md:text-7xl lg:text-8xl xl:text-8xl">
+          <h1 className="condominios_header__title text-5xl md:text-7xl lg:text-8xl xl:text-8xl">
             CONDOMÍNIOS
           </h1>
         </div>
@@ -60,7 +60,7 @@ const Condominios = () => {
             Dr Josimar Bezerra ( Diretor executivo )
           </span>
           <a
-            href="https://wa.me//5531989073087?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
+            href="https://wa.me//5531996881200?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
             target="_blank"
             rel="noopener noreferrer"
             className="no-underline"
@@ -85,7 +85,7 @@ const Condominios = () => {
             Sibele Sevilhano ( Diretora comercial )
           </span>
           <a
-            href="https://wa.me//5531989073087?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
+            href="https://wa.me//5531984524218?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20servi%C3%A7os.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
             target="_blank"
             rel="noopener noreferrer"
             className="no-underline"

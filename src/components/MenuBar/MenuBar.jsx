@@ -8,7 +8,7 @@ import "./MenuBar.scss";
 
 const MenuBar = () => {
   return (
-    <Navbar fixed="top" expand="xl" className="navbar bg-body-tertiary">
+    <Navbar sticky="top" expand="xl" className="navbar bg-body-tertiary">
       <Container className="menuBar">
         <Navbar.Brand>
           <Link to="/" className="logo-link">
@@ -20,6 +20,9 @@ const MenuBar = () => {
           <Nav className="me-auto">
             <Nav.Link as={NavLink} className="link_navigate" to="/seguros">
               Seguros
+            </Nav.Link>
+            <Nav.Link as={NavLink} className="link_navigate" to="/condominios">
+              Seguro Condominial
             </Nav.Link>
             <NavDropdown
               className="link_navigate"
@@ -47,10 +50,12 @@ const MenuBar = () => {
                 </Nav.Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={NavLink} className="link_navigate" to="/condominios">
-              Condomínios
-            </Nav.Link>
-            <Nav.Link as={NavLink} className="link_navigate" to="/consorcios">
+            <Nav.Link
+              hidden
+              as={NavLink}
+              className="link_navigate"
+              to="/consorcios"
+            >
               Consórcios
             </Nav.Link>
             <Nav.Link as={NavLink} className="link_navigate" to="/commodities">

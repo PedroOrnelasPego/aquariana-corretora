@@ -1,48 +1,71 @@
 .home {
-  &__header {
-    margin-top: 100px;
+  .home_header {
+    padding-top: 10rem;
+    padding-bottom: 22rem;
+    background-image: url("../../assets/background/home.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+
+    &__title {
+      text-shadow: 4px -2px 8px rgba(0, 0, 0, 0.562);
+      margin-top: 20px;
+    }
   }
 
-  .seguros {
-    &__content {
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    flex-wrap: wrap;
+
+    span {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+    }
+
+    .container_home {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 70vh;
-      flex-wrap: wrap;
+      gap: 100px 50px;
+      margin: 100px 50px;
+    }
 
-      span {
-        font-family: "Inter", sans-serif;
-        font-weight: 500;
-      }
+    .card_home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 200px;
+      height: 200px;
+      background: #e0bb4d;
+      border-radius: 20px;
+      box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+      gap: 50px 50px;
+      margin: 100px 50px;
 
-      .container_seguros {
+      .dual_home {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 100px 50px;
-        margin: 100px 50px;
+        flex-wrap: wrap;
+        gap: 20px;
       }
+    }
+  }
+}
 
-      .card_seguros {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 200px;
-        height: 200px;
-        background: #e0bb4d;
-        border-radius: 20px;
-        box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
-        gap: 50px 50px;
-        margin: 100px 50px;
-
-        .dual_seguros {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-        }
-      }
+@media only screen and (max-width: 670px) {
+  .home {
+    .home_header {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+      background-image: url("../../assets/background/home.jpg");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center;
+      background-size: cover;
     }
   }
 }

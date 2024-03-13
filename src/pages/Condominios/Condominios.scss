@@ -61,3 +61,17 @@
     }
   }
 }
+
+@media only screen and (max-width: 670px) {
+  .condominios {
+    .condominios_header {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+      background-image: url("../../assets/background/condominios.jpg");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
