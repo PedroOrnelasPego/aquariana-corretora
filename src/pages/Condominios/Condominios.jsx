@@ -7,7 +7,7 @@ const Condominios = () => {
     <div className="condominios">
       <div className="condominios_header">
         <div className="relative flex items-center flex-col justify-center text-center text-white font-bold">
-          <h1 className="condominios_header__title text-6xl md:text-7xl lg:text-8xl xl:text-8xl">
+          <h1 className="condominios_header__title text-5xl md:text-7xl lg:text-8xl xl:text-8xl">
             CONDOMÍNIOS
           </h1>
         </div>
