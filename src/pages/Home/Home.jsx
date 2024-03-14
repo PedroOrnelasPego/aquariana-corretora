@@ -21,7 +21,7 @@ const Home = () => {
           <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Bem-vindo à Aquariana
           </h1>
-          <h2>sua parceira confiável em seguros e imóveis!</h2>
+          <h2 className="px-2">sua parceira confiável em seguros e imóveis!</h2>
         </div>
         <Container>
           <div className="home-section">

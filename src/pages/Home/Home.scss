@@ -79,3 +79,18 @@
     }
   }
 }
+
+@media only screen and (max-width: 770px) {
+  .home {
+    .home-img {
+      display: none;
+    }
+
+    .home-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: justify;
+    }
+  }
+}
