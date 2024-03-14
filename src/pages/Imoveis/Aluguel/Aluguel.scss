@@ -67,3 +67,17 @@
     padding-left: 8px;
   }
 }
+
+@media only screen and (max-width: 670px) {
+  .aluguel {
+    .aluguel_header {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+      background-image: url("../../../assets/background/casa-aluguel.jpg");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}

@@ -32,9 +32,24 @@
     .radio-buttons {
       display: flex;
       margin: 20px 0;
+      flex-wrap: wrap;
   
       .card_contatos__form__check {
         margin-right: 20px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 670px) {
+    .contatos {
+      .contatos_header {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+        background-image: url("../../assets/background/contatos.jpg");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
       }
     }
   }

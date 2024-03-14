@@ -9,6 +9,7 @@ import { MdElderly, MdPets } from "react-icons/md";
 import { BsFillHeartPulseFill, BsFillHouseDoorFill } from "react-icons/bs";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import { Container } from "react-bootstrap";
 
 const Seguros = () => {
   const [showModal, setShowModal] = useState(false);
@@ -111,25 +112,26 @@ const Seguros = () => {
           residenciais a seguros de viagem, estamos aqui para oferecer
           tranquilidade em todas as áreas da sua vida.
         </div>
-
-        <div className="seguros__content">
-          {segurosData.map((seguro, index) => (
-            <animated.div
-              key={index}
-              className="card_seguros"
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-              onClick={() => openModal(seguro)}
-              style={{
-                transform: `scale(${hoveredIndex === index ? 1.1 : 1})`,
-                cursor: `${hoveredIndex === index ? "pointer" : "default"}`,
-              }}
-            >
-              {seguro.icon}
-              <span className="text-center">{seguro.title}</span>
-            </animated.div>
-          ))}
-        </div>
+        <Container>
+          <div className="seguros__content">
+            {segurosData.map((seguro, index) => (
+              <animated.div
+                key={index}
+                className="card_seguros"
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => openModal(seguro)}
+                style={{
+                  transform: `scale(${hoveredIndex === index ? 1.1 : 1})`,
+                  cursor: `${hoveredIndex === index ? "pointer" : "default"}`,
+                }}
+              >
+                {seguro.icon}
+                <span className="text-center">{seguro.title}</span>
+              </animated.div>
+            ))}
+          </div>
+        </Container>
       </div>
 
       <Modal show={showModal} onHide={closeModaL}>
