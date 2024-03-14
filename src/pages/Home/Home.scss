@@ -1,7 +1,7 @@
 .home {
   .home_header {
     padding-top: 10rem;
-    padding-bottom: 22rem;
+    padding-bottom: 17rem;
     background-image: url("../../assets/background/home.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
+
     flex-wrap: wrap;
 
     span {
@@ -53,6 +53,16 @@
         gap: 20px;
       }
     }
+  }
+
+  .home-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .home-img {
+    width: 400px;
+    height: 400px;
   }
 }
 

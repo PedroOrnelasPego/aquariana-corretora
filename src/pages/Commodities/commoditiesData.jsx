@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 import gold from "../../assets/commodities/card/gold.jpg";
 import oil from "../../assets/commodities/card/oil.jpg";
 import sugar from "../../assets/commodities/card/sugar.jpg";
@@ -19,14 +17,9 @@ const data = [
   {
     title: "Minerais",
     body: [
-      "Descritivo dos minerais que temos acesso, de forma mediata e imediata, seja o mineral já extraído, mina ou projeto greenfield (solo):",
-      "Ouro",
-      "Minério de ferro",
-      "Lítio",
-      "Diamante",
-      "Platinóide (cobre): projeto",
-      "Niquel: Mina com projeto",
-      "Ou outro mineral específico, poderia ser feita uma busca.",
+      "Descrição dos minerais que temos acesso, de forma mediata e imediata, seja o mineral já extraído, mina ou projeto greenfield (solo): Ouro, Minério de ferro, Lítio, Diamante",
+      "Platinóides (cobre): projeto",
+      "Níquel: Mina com projeto, ou outro mineral específico, poderia ser feita uma busca.",
     ],
 
     backgroundImage: gold,
@@ -36,9 +29,7 @@ const data = [
     body: [
       "O Brasil é o maior produtor mundial de produtos de açúcar e etanol. Nós obtemos nosso açúcar de fábricas de açúcar no Brasil que produzem produtos de açúcar e etanol usados nos mercados local e internacional.",
       "Aproximadamente dois terços do açúcar produzido no Brasil são destinados ao mercado externo. Mais de 100 países ao redor do mundo confiam no açúcar do Brasil com importantes mercados de exportação que incluem China, Federação Russa, Índia, Irã e Emirados Árabes Unidos. Praticamente todas as exportações brasileiras são negociadas em um ambiente de livre mercado.",
-      <br key={uuidv4()} />,
-      "ICUMSA 45 RBU",
-      <br key={uuidv4()} />,
+
       "O açúcar ICUMSA 45 é o açúcar da mais alta qualidade disponível no mercado atualmente. Ele é um açúcar branco altamente refinado adequado para o consumo humano e para uso em uma ampla gama de aplicações alimentares. É perpetuamente de alta demanda, pois é a forma mais segura de açúcar, devido ao fato de que o processo de refino pelo qual é criado remove as bactérias e contaminantes frequentemente presentes nos açúcares brutos.",
     ],
     backgroundImage: sugar,
@@ -58,15 +49,15 @@ const data = [
       "Com quase 100 milhões de toneladas de produção anual, o Brasil é o terceiro maior produtor mundial de milho, depois dos EUA e da China. O Brasil produz milho geneticamente modificado (GMO) e não geneticamente modificado (não GMO), que a proporção de milho transgênico supera em cerca de 90%. Culturas de verão e de inverno são possíveis nas principais áreas de cultivo brasileiras.",
       "Cerca de um terço da produção anual total é exportado. O milho é distinguido como sendo para consumo humano ou animal.",
       "Os países exportadores mais importantes para o milho brasileiro são a Ásia, especialmente a China e a Europa.",
-      <br key={uuidv4()} />,
+
       "Soja GMO – Grade #2",
-      <br key={uuidv4()} />,
+
       "A mais conhecida, cultivada e comercialmente utilizado é a soja transgênica (Organismos Geneticamente Modificados – OGMs). Termo genérico usado para se referir à soja que contém um ou mais genes transferidos através de técnicas de biotecnologia.",
       "A mais conhecida, cultivada e comercialmente utilizado é a soja transgênica (Organismos Geneticamente Modificados – OGMs). Termo genérico usado para se referir à soja que contém um ou mais genes transferidos através de técnicas de biotecnologia.",
       "Proteína 34,5%. Umidade máxima de 14%.",
-      <br key={uuidv4()} />,
+
       "Soja Non GMO",
-      <br key={uuidv4()} />,
+
       "A soja convencional possui tecnologia natural como ferramenta de gestão de alta resistência a doenças, alto potencial produtivo, além de ter produtividade competitiva. Entre os benefícios, o cultivo convencional contribui para a manutenção da biodiversidade e para uma maior conservação do meio ambiente, se utilizado em conjunto com a aplicação de uma gestão integrada.",
       "Teor de proteínas mínimo 34,5%. Teor de óleo 18,5%. Umidade máxima de 14%.",
     ],
@@ -84,7 +75,8 @@ const data = [
   {
     title: "Frango",
     body: [
-      "O frango é um tipo de ave domesticada, uma subespécie de ave da selva vermelha. Eles são uma das aves domésticas mais comuns e mais difundidas, com uma população total de mais de 19 bilhões a partir de 2011. Há mais galinhas no mundo do que qualquer outra ave ou ave domesticada. O frango brasileiro está presente nas mesas de consumidores de mais de 150 países. É o maior exportador mundial desde 2004 e o terceiro maior produtor de carne de aves, atrás somente de Estados Unidos e China.",
+      "O frango é um tipo de ave domesticada, uma subespécie de ave da selva vermelha. Eles são uma das aves domésticas mais comuns e mais difundidas, com uma população total de mais de 19 bilhões a partir de 2011. Há mais galinhas no mundo do que qualquer outra ave ou ave domesticada.",
+      "O frango brasileiro está presente nas mesas de consumidores de mais de 150 países. É o maior exportador mundial desde 2004 e o terceiro maior produtor de carne de aves, atrás somente de Estados Unidos e China.",
     ],
     backgroundImage: chicken,
   },
