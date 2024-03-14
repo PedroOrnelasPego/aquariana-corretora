@@ -32,16 +32,29 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 180px;
+      gap: 40px;
       flex-wrap: wrap;
       margin: 70px 0 0 0;
+
+      span {
+        background: rgba(255, 255, 255, 0.13);
+        border-radius: 16px;
+        padding: 2px 8px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
 
       .commodities_card {
         background-color: #e0bb4d;
         border: none;
         box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.808);
-        width: 240px;
-        height: 220px;
+        width: 260px;
+        height: 345px;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
 
         &__content {
           display: flex;
@@ -49,8 +62,9 @@
           justify-content: flex-end;
           flex-direction: column;
           text-align: justify;
-          font-size: 16px;
           font-weight: 500;
+          color: #fff;
+          font-size: 21px;
         }
       }
     }
@@ -74,7 +88,6 @@
       background-attachment: scroll;
       background-position: center;
       background-size: cover;
-
     }
   }
 }

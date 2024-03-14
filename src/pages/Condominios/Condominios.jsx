@@ -1,6 +1,7 @@
 import "./Condominios.scss";
 import whatsapp from "../../assets/social/whatsapp.png";
 import { HiPhone } from "react-icons/hi";
+import { Container } from "react-bootstrap";
 
 const Condominios = () => {
   return (
@@ -53,50 +54,60 @@ const Condominios = () => {
           </p>
         </div>
       </div>
+      <Container>
+        <div className="conatiner_contato_condominio">
+          <div className="contato_condominio">
+            <span className="mb-2 font-medium">
+              Dr Josimar Bezerra ( Diretor executivo )
+            </span>
+            <a
+              href="https://wa.me//5531996881200?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="no-underline"
+            >
+              <button className="contato_condominio__button">
+                Solicite sua cotação!
+                <img className="w-10" src={whatsapp} alt="" />
+              </button>
+            </a>
+          </div>
 
-      <div className="conatiner_contato_condominio">
-        <div className="contato_condominio">
-          <span className="mb-2 font-medium">
-            Dr Josimar Bezerra ( Diretor executivo )
-          </span>
-          <a
-            href="https://wa.me//5531996881200?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-underline"
-          >
-            <button className="contato_condominio__button">
-              Solicite sua cotação!
-              <img className="w-10" src={whatsapp} alt="" />
-            </button>
-          </a>
-        </div>
+          {/* <div className="contato_condominio">
+            <span className="mb-2 font-medium">Solicite sua cotação!</span>
+            <p className="bg-transparent contato_condominio__button">
+              <HiPhone className="text-black" size={22} />
+              <span className="text-black">(31) 3344-5088</span>
+            </p>
+          </div> */}
 
-        <div className="contato_condominio">
-          <span className="mb-2 font-medium">Solicite sua cotação!</span>
-          <p className="bg-transparent contato_condominio__button">
-            <HiPhone className="text-black" size={22} />
-            <span className="text-black">(31) 3344-5088</span>
-          </p>
-        </div>
+          <div className="contato_condominio">
+            <span className="mb-2 font-medium">Solicite sua cotação!</span>
 
-        <div className="contato_condominio">
-          <span className="mb-2 font-medium">
-            Sibele Sevilhano ( Diretora comercial )
-          </span>
-          <a
-            href="https://wa.me//5531984524218?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20servi%C3%A7os.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-underline"
-          >
-            <button className="contato_condominio__button">
-              Solicite sua cotação!
-              <img className="w-10" src={whatsapp} alt="" />
-            </button>
-          </a>
+            <div className="contato_condominio__call">
+              (31) 3344-5088
+              <HiPhone className="text-black" size={22} />
+            </div>
+          </div>
+
+          <div className="contato_condominio">
+            <span className="mb-2 font-medium">
+              Sibele Sevilhano ( Diretora comercial )
+            </span>
+            <a
+              href="https://wa.me//5531984524218?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20servi%C3%A7os.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="no-underline"
+            >
+              <button className="contato_condominio__button">
+                Solicite sua cotação!
+                <img className="w-10" src={whatsapp} alt="" />
+              </button>
+            </a>
+          </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

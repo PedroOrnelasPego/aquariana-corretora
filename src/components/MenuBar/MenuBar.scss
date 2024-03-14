@@ -2,20 +2,36 @@
   .link_navigate {
     text-decoration: none;
     color: black;
+
+    a {
+      display: flex;
+      align-items: center;
+      margin: 0;
+    }
   }
 
-  .me-auto {
+  .meauto {
     display: flex;
     justify-content: space-between;
-  
-    
 
-    a{
-      margin-left: 80px;
+    gap: 20px;
+
+    a {
+      //  margin-top: 80px;
     }
   }
 
   .logo {
     width: 280px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .bg-body-tertiary {
+    .meauto {
+      a {
+        margin-top:6px;
+      }
+    }
   }
 }
