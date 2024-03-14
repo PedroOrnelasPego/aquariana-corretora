@@ -1,4 +1,4 @@
-import { Card, Modal } from "react-bootstrap";
+import { Card, Container, Modal } from "react-bootstrap";
 import "./Commodities.scss";
 import { useState } from "react";
 import data from "./commoditiesData";
@@ -36,45 +36,44 @@ const Commodities = () => {
           clientes, auxiliando na sua competitividade mercadológica. A oferta
           poderá variar de acordo com a disponibilidade de cada produto.
         </div>
-
-        <div className="commodities_cards">
-          {data.map((item, index) => (
-            <div key={index}>
-              <button type="button" onClick={() => handleModalShow(index)}>
-                <Card className="commodities_card flex justify-center items-center">
-                  <Card.Img
-                    className="card_img"
-                    src={item.imageSrc}
-                    alt={item.title}
-                  />
-                  <Card.Body className="commodities_card__content">
-                    {item.title}
-                  </Card.Body>
-                </Card>
-              </button>
-
-              <Modal centered show={showModal === index} onHide={handleClose}>
-                <Modal.Header closeButton>
-                  <Modal.Title>{item.title}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {item.body.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
-                </Modal.Body>
-                <Modal.Footer>
-                  <button
-                    type="button"
-                    className="social_button"
-                    onClick={handleClose}
+        <Container>
+          <div className="commodities_cards">
+            {data.map((item, index) => (
+              <div key={index}>
+                <button type="button" onClick={() => handleModalShow(index)}>
+                  <Card
+                    className="commodities_card flex justify-center items-center"
+                    style={{ backgroundImage: `url(${item.backgroundImage})` }}
                   >
-                    Close
-                  </button>
-                </Modal.Footer>
-              </Modal>
-            </div>
-          ))}
-        </div>
+                    <Card.Body className="commodities_card__content">
+                      <span>{item.title}</span>
+                    </Card.Body>
+                  </Card>
+                </button>
+
+                <Modal centered show={showModal === index} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>{item.title}</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    {item.body.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <button
+                      type="button"
+                      className="social_button"
+                      onClick={handleClose}
+                    >
+                      Close
+                    </button>
+                  </Modal.Footer>
+                </Modal>
+              </div>
+            ))}
+          </div>
+        </Container>
 
         <div></div>
 
@@ -134,7 +133,6 @@ const Commodities = () => {
         <div className="commodities__img">
           <img src={commodities} alt="" />
         </div>
-        
       </div>
     </div>
   );

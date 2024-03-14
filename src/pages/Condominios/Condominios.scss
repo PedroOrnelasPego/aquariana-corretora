@@ -1,4 +1,5 @@
 .condominios {
+  margin-bottom: 40px;
   .condominios_header {
     padding-top: 10rem;
     padding-bottom: 22rem;
@@ -37,7 +38,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 80px;
 
     .contato_condominio {
       display: flex;
@@ -56,7 +57,19 @@
         width: 220px;
         height: 60px;
         border-radius: 40px;
-        margin-bottom: 100px;
+      }
+
+      &__call{
+        color: #000;
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 220px;
+        height: 60px;
+        border-radius: 40px;
+        cursor: auto;
       }
     }
   }
