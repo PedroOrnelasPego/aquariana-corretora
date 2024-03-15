@@ -1,14 +1,11 @@
 import "./Seguros.scss";
 import { useState } from "react";
-import { animated } from "react-spring";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import { animated, useSpring } from "react-spring";
+
 import { Container } from "react-bootstrap";
 import segurosData from "./segurosData";
 
 const Seguros = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedSeguro, setSelectedSeguro] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleMouseEnter = (index) => {
@@ -17,16 +14,6 @@ const Seguros = () => {
 
   const handleMouseLeave = () => {
     setHoveredIndex(null);
-  };
-
-  const openModal = (seguro) => {
-    setSelectedSeguro(seguro);
-    setShowModal(true);
-  };
-
-  const closeModaL = () => {
-    setSelectedSeguro(null);
-    setShowModal(false);
   };
 
   return (
@@ -56,39 +43,40 @@ const Seguros = () => {
         </div>
         <Container>
           <div className="seguros__content">
-            {segurosData.map((seguro, index) => (
-              <animated.div
-                key={index}
-                className="card_seguros"
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => openModal(seguro)}
-                style={{
-                  transform: `scale(${hoveredIndex === index ? 1.1 : 1})`,
-                  cursor: `${hoveredIndex === index ? "pointer" : "default"}`,
-                }}
-              >
-                {seguro.icon}
-                <span className="text-center">{seguro.title}</span>
-              </animated.div>
-            ))}
+            {segurosData.map((seguro, index) => {
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              const hoverSpring = useSpring({
+                scale: hoveredIndex === index ? 1.1 : 1,
+              });
+
+              const openWhatsapp = () => {
+                window.open(
+                  `https://wa.me//5531${seguro.num}?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços%20de${seguro.msg}.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F`
+                );
+              };
+
+              return (
+                <animated.div
+                  key={index}
+                  className="card_seguros"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={() => {
+                    openWhatsapp();
+                  }}
+                  style={{
+                    ...hoverSpring,
+                    cursor: `${hoveredIndex === index ? "pointer" : "default"}`,
+                  }}
+                >
+                  {seguro.icon}
+                  <span className="text-center">{seguro.title}</span>
+                </animated.div>
+              );
+            })}
           </div>
         </Container>
       </div>
-
-      <Modal show={showModal} onHide={closeModaL}>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            {selectedSeguro ? selectedSeguro.title : ""}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{selectedSeguro ? selectedSeguro.content : ""}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={closeModaL}>
-            Fechar
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </div>
   );
 };
