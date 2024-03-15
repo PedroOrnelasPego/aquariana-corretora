@@ -1,7 +1,7 @@
 .home {
   .home_header {
     padding-top: 10rem;
-    padding-bottom: 22rem;
+    padding-bottom: 17rem;
     background-image: url("../../assets/background/home.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
+
     flex-wrap: wrap;
 
     span {
@@ -54,6 +54,16 @@
       }
     }
   }
+
+  .home-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .home-img {
+    width: 400px;
+    height: 400px;
+  }
 }
 
 @media only screen and (max-width: 670px) {
@@ -66,6 +76,21 @@
       background-attachment: scroll;
       background-position: center;
       background-size: cover;
+    }
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .home {
+    .home-img {
+      display: none;
+    }
+
+    .home-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: justify;
     }
   }
 }

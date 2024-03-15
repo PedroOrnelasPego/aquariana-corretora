@@ -1,19 +1,11 @@
 import "./Seguros.scss";
 import { useState } from "react";
-import { animated } from "react-spring";
-import { ImMobile, ImTruck } from "react-icons/im";
-import { FaCar, FaCamera } from "react-icons/fa";
-import { GiCow } from "react-icons/gi";
-import { PiAirplaneTiltFill } from "react-icons/pi";
-import { MdElderly, MdPets } from "react-icons/md";
-import { BsFillHeartPulseFill, BsFillHouseDoorFill } from "react-icons/bs";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import { animated, useSpring } from "react-spring";
+
 import { Container } from "react-bootstrap";
+import segurosData from "./segurosData";
 
 const Seguros = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedSeguro, setSelectedSeguro] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleMouseEnter = (index) => {
@@ -23,69 +15,6 @@ const Seguros = () => {
   const handleMouseLeave = () => {
     setHoveredIndex(null);
   };
-
-  const openModal = (seguro) => {
-    setSelectedSeguro(seguro);
-    setShowModal(true);
-  };
-
-  const closeModaL = () => {
-    setSelectedSeguro(null);
-    setShowModal(false);
-  };
-
-  const segurosData = [
-    {
-      icon: <BsFillHouseDoorFill size={90} />,
-      title: "Seguro Residêncial",
-      content: "Conteúdo do Seguro Residêncial...",
-    },
-    {
-      icon: (
-        <div className="dual_seguros">
-          <ImMobile size={60} />
-          <FaCamera size={60} />
-        </div>
-      ),
-      title: "Celulares e Eletroportáteis",
-      content: "Conteúdo do Seguro de Celulares e Eletroportáteis...",
-    },
-    {
-      icon: (
-        <div className="dual_seguros">
-          <FaCar size={60} />
-          <ImTruck size={60} />
-        </div>
-      ),
-      title: "Seguro de Veículos",
-      content: "Conteúdo do Seguro de Veículos...",
-    },
-    {
-      icon: <MdElderly size={90} />,
-      title: "Previdência Privada",
-      content: "Conteúdo da Previdência Privada...",
-    },
-    {
-      icon: <BsFillHeartPulseFill size={90} />,
-      title: "Seguro de Vida",
-      content: "Conteúdo do Seguro de Vida...",
-    },
-    {
-      icon: (
-        <div className="dual_seguros">
-          <MdPets size={70} />
-          <GiCow size={80} />
-        </div>
-      ),
-      title: "Seguro Pet's e Agronegócio",
-      content: "Conteúdo do Seguro Pet's e Agronegócio...",
-    },
-    {
-      icon: <PiAirplaneTiltFill size={90} />,
-      title: "Viagem",
-      content: "Conteúdo do Seguro de Viagem...",
-    },
-  ];
 
   return (
     <div className="seguros">
@@ -114,39 +43,40 @@ const Seguros = () => {
         </div>
         <Container>
           <div className="seguros__content">
-            {segurosData.map((seguro, index) => (
-              <animated.div
-                key={index}
-                className="card_seguros"
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => openModal(seguro)}
-                style={{
-                  transform: `scale(${hoveredIndex === index ? 1.1 : 1})`,
-                  cursor: `${hoveredIndex === index ? "pointer" : "default"}`,
-                }}
-              >
-                {seguro.icon}
-                <span className="text-center">{seguro.title}</span>
-              </animated.div>
-            ))}
+            {segurosData.map((seguro, index) => {
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              const hoverSpring = useSpring({
+                scale: hoveredIndex === index ? 1.1 : 1,
+              });
+
+              const openWhatsapp = () => {
+                window.open(
+                  `https://wa.me//5531${seguro.num}?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços%20de${seguro.msg}.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F`
+                );
+              };
+
+              return (
+                <animated.div
+                  key={index}
+                  className="card_seguros"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={() => {
+                    openWhatsapp();
+                  }}
+                  style={{
+                    ...hoverSpring,
+                    cursor: `${hoveredIndex === index ? "pointer" : "default"}`,
+                  }}
+                >
+                  {seguro.icon}
+                  <span className="text-center">{seguro.title}</span>
+                </animated.div>
+              );
+            })}
           </div>
         </Container>
       </div>
-
-      <Modal show={showModal} onHide={closeModaL}>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            {selectedSeguro ? selectedSeguro.title : ""}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{selectedSeguro ? selectedSeguro.content : ""}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={closeModaL}>
-            Fechar
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </div>
   );
 };
