@@ -1,5 +1,3 @@
-
-
 import casa from "../../assets/seguros/casa.png";
 import idoso from "../../assets/seguros/idoso.png";
 import smartphone from "../../assets/seguros/smartphone.png";
@@ -13,34 +11,32 @@ const segurosData = [
   {
     icon: <img src={casa} className="w-24" alt="" />,
     title: "Seguro Residêncial",
-    content: "Conteúdo do Seguro Residêncial...",
-    num: "32",
-    msg: "%20seguro%20residêncial",
+    num: "989073087",
+    msg: "%20seguro%20residencial",
   },
   {
     icon: <img src={smartphone} className="w-24" alt="" />,
     title: "Celulares e Eletroportáteis",
-    content: "Conteúdo do Seguro de Celulares e Eletroportáteis...",
-    num: "33",
+    num: "989073087",
     msg: "%20seguro%20de%20celulares%20e%20eletroportáteis",
   },
   {
     icon: <img src={veiculo} className="w-24" alt="" />,
     title: "Seguro de Veículos",
-    content: "Conteúdo do Seguro de Veículos...",
-    msg: "%20seguro%20de%20celulares%20e%20eletroportáteis",
+    num: "989073087",
+    msg: "%20seguro%20de%20veículos",
   },
   {
     icon: <img src={idoso} className="w-24" alt="" />,
     title: "Previdência Privada",
-    content: "Conteúdo da Previdência Privada...",
-    msg: "%20seguro%20de%20celulares%20e%20eletroportáteis",
+    num: "989073087",
+    msg: "%20previdência%20privada",
   },
   {
     icon: <img src={vida} className="w-24" alt="" />,
     title: "Seguro de Vida",
-    content: "Conteúdo do Seguro de Vida...",
-    msg: "%20seguro%20de%20celulares%20e%20eletroportáteis",
+    num: "989073087",
+    msg: "%20seguro%20de%20vida",
   },
   {
     icon: (
@@ -50,14 +46,14 @@ const segurosData = [
       </div>
     ),
     title: "Seguro Pet's e Agronegócio",
-    content: "Conteúdo do Seguro Pet's e Agronegócio...",
-    msg: "%20seguro%20de%20celulares%20e%20eletroportáteis",
+    num: "989073087",
+    msg: "%20seguro%20de%20pets%20e%20agronegócio",
   },
   {
     icon: <img src={aviao} className="w-24" alt="" />,
     title: "Viagem",
-    content: "Conteúdo do Seguro de Viagem...",
-    msg: "%20seguro%20de%20celulares%20e%20eletroportáteis",
+    num: "989073087",
+    msg: "%20seguro%20de%20viagem",
   },
 ];
 
