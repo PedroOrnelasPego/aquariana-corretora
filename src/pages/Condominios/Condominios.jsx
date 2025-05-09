@@ -92,10 +92,10 @@ const Condominios = () => {
 
           <div className="contato_condominio">
             <span className="mb-2 font-medium">
-              Sibele Sevilhano ( Diretora comercial )
+              Luciana Luciana Moura ( Diretora comercial )
             </span>
             <a
-              href="https://wa.me//5531984524218?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20servi%C3%A7os.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
+              href="https://wa.me//5531998917362?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20servi%C3%A7os.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="no-underline"
