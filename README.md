@@ -6,3 +6,5 @@
 * https://tailwindcss.com/
 * https://formsubmit.co/documentation
 * https://www.npmjs.com/package/react-helmet
+
+* Node 18
