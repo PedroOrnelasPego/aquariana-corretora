@@ -9,10 +9,15 @@ import Consorcios from "../pages/Consorcios";
 import Aluguel from "../pages/Imoveis/Aluguel";
 import Vendas from "../pages/Imoveis/Vendas";
 import Contatos from "../pages/Contatos";
+import { AdminImoveis, AdminLayout, AdminLogin } from "../pages/Admin";
 
 function AppRoutes() {
   return (
     <Routes>
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<AdminImoveis />} />
+        <Route path="login" element={<AdminLogin />} />
+      </Route>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
         <Route path="/seguros" element={<Seguros />} />

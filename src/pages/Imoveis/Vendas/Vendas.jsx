@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import PropTypes from "prop-types";
 import { useSpring, animated } from "react-spring";
 import { Modal, Button, Carousel } from "react-bootstrap";
 import "./Vendas.scss";
@@ -6,40 +7,140 @@ import imoveisVendasData from "./imoveisVendasData";
 import ContactForm from "../../../components/ContactForm/ContactForm";
 import EmptyPropertyList from "../../../components/EmptyPropertyList";
 import { Helmet } from "react-helmet";
+import { isFirebaseEnabled } from "../../../firebase/firebase";
+import { listImoveisPublic } from "../../../services/imoveisFirebase";
+
+const ImovelCard = ({ imovel, onOpen }) => {
+  const [hovered, setHovered] = useState(false);
+  const springProps = useSpring({
+    transform: hovered ? "scale(1.05)" : "scale(1)",
+    zIndex: hovered ? 1 : 0,
+  });
+
+  const description = (imovel.description || []).join(" ");
+
+  return (
+    <animated.div
+      className={`card_imoveis bg-white shadow-lg rounded-lg p-4 max-w-sm m-2 cursor-pointer ${
+        hovered ? "hovered" : ""
+      }`}
+      onClick={() => onOpen(imovel.id)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={springProps}
+    >
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={imovel.imgCarousel?.[0] || imovel.imgCapa}
+          alt={imovel.title}
+        />
+        <Carousel.Caption>
+          <h3>{imovel.title}</h3>
+          <p>{description}</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <div className="card_imoveis_content">
+        <img
+          src={imovel.imgCapa}
+          alt={imovel.title}
+          className="card_imoveis_content__image"
+        />
+      </div>
+      <div className="card__content">
+        <h3 className="text-xl font-bold mb-2">{imovel.title}</h3>
+        <hr className="my-2" />
+        <p className="card__content__text">{description}</p>
+      </div>
+      <Button
+        variant="warning"
+        className="w-full"
+        onClick={(e) => {
+          e.stopPropagation();
+          onOpen(imovel.id);
+        }}
+      >
+        Saiba mais!
+      </Button>
+    </animated.div>
+  );
+};
+
+ImovelCard.propTypes = {
+  imovel: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.arrayOf(PropTypes.string),
+    imgCapa: PropTypes.string,
+    imgCarousel: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+  onOpen: PropTypes.func.isRequired,
+};
 
 const Vendas = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImovel, setSelectedImovel] = useState(null);
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [imoveis, setImoveis] = useState(imoveisVendasData);
+  const [loadingImoveis, setLoadingImoveis] = useState(isFirebaseEnabled);
+  const [imoveisError, setImoveisError] = useState(null);
+
+  const imoveisUi = useMemo(() => {
+    return (imoveis || []).map((imovel) => {
+      const descriptionArr = Array.isArray(imovel.description)
+        ? imovel.description
+        : String(imovel.description || "")
+            .split("\n")
+            .map((l) => l.trim())
+            .filter(Boolean);
+
+      const imgCarousel =
+        imovel.imgCarousel || imovel.imgCarouselUrls || imovel.imgs || [];
+      const imgCapa = imovel.imgCapa || imovel.imgCapaUrl || imgCarousel?.[0];
+
+      return {
+        ...imovel,
+        description: descriptionArr,
+        imgCarousel,
+        imgCapa,
+      };
+    });
+  }, [imoveis]);
+
+  useEffect(() => {
+    let mounted = true;
+
+    const load = async () => {
+      if (!isFirebaseEnabled) return;
+      setImoveisError(null);
+      setLoadingImoveis(true);
+      try {
+        const data = await listImoveisPublic({ type: "venda" });
+        if (mounted) setImoveis(data);
+      } catch (err) {
+        if (mounted) {
+          setImoveisError(
+            err?.message || "Não foi possível carregar os imóveis no momento.",
+          );
+        }
+      } finally {
+        if (mounted) setLoadingImoveis(false);
+      }
+    };
+
+    load();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   const handleCardClick = (id) => {
-    const imovel = imoveisVendasData.find((imovel) => imovel.id === id);
+    const imovel = imoveisUi.find((imovel) => imovel.id === id);
     setSelectedImovel(imovel);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-  };
-
-  const handleMouseEnter = (id) => {
-    setHoveredCard(id);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredCard(null);
-  };
-
-  const getCardSpring = (id) => {
-    const isHovered = hoveredCard === id;
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const springProps = useSpring({
-      transform: isHovered ? "scale(1.1)" : "scale(1)",
-      zIndex: isHovered ? 1 : 0,
-    });
-
-    return springProps;
   };
 
   const renderImovelCarousel = (img, index) => (
@@ -88,59 +189,20 @@ const Vendas = () => {
         </div>
 
         <div className="gap-2.5 flex justify-center items-center m-20 flex-wrap">
-          {imoveisVendasData.length === 0 ? (
+          {loadingImoveis ? (
+            <p>Carregando imóveis...</p>
+          ) : imoveisError ? (
+            <EmptyPropertyList mensagem={imoveisError} />
+          ) : imoveisUi.length === 0 ? (
             <EmptyPropertyList mensagem="Nenhum imóvel à venda disponível no momento." />
           ) : (
-            imoveisVendasData.map((imovel) => {
-              const description = imovel.description.join(" ");
-              const isImovelHovered = hoveredCard === imovel.id;
-
-              return (
-                <animated.div
-                  key={imovel.id}
-                  className={`card_imoveis bg-white shadow-lg rounded-lg p-4 max-w-sm m-2 cursor-pointer ${
-                    isImovelHovered ? "hovered" : ""
-                  }`}
-                  onClick={() => handleCardClick(imovel.id)}
-                  onMouseEnter={() => handleMouseEnter(imovel.id)}
-                  onMouseLeave={handleMouseLeave}
-                  style={getCardSpring(imovel.id)}
-                >
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src={imovel.imgCarousel[0]}
-                      alt={imovel.title}
-                    />
-                    <Carousel.Caption>
-                      <h3>{imovel.title}</h3>
-                      <p>{description}</p>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                  <div className="card_imoveis_content">
-                    <img
-                      src={imovel.imgCapa}
-                      alt={imovel.title}
-                      className="card_imoveis_content__image"
-                    />
-                  </div>
-                  <div className="card__content">
-                    <h3 className="text-xl font-bold mb-2">
-                      {imovel.title} - {imovel.id}
-                    </h3>
-                    <hr className="my-2" />
-                    <p className="card__content__text">{description}</p>
-                  </div>
-                  <Button
-                    variant="warning"
-                    className="w-full"
-                    onClick={() => handleCardClick(imovel.id)}
-                  >
-                    Saiba mais!
-                  </Button>
-                </animated.div>
-              );
-            })
+            imoveisUi.map((imovel) => (
+              <ImovelCard
+                key={imovel.id}
+                imovel={imovel}
+                onOpen={handleCardClick}
+              />
+            ))
           )}
         </div>
       </div>
@@ -156,7 +218,9 @@ const Vendas = () => {
         <Modal.Body>
           {selectedImovel && (
             <Carousel>
-              {selectedImovel.imgCarousel.map(renderImovelCarousel)}
+              {(selectedImovel.imgCarousel || [selectedImovel.imgCapa]).map(
+                renderImovelCarousel,
+              )}
             </Carousel>
           )}
           <hr className="my-2" />
