@@ -56,7 +56,7 @@ const Footer = ({ className }) => {
               textDecoration: "none",
             }}
           >
-            Veritas Web
+            Veritas Web | V0.1.1
           </a>
         </div>
       </div>
