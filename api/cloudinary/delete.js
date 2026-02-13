@@ -30,19 +30,13 @@ function initFirebaseAdmin() {
   const privateKeyFromPlain = getEnvAny([
     "FIREBASE_ADMIN_PRIVATE_KEY",
     "FIREBASE_ADMIN_PRIVATE_KEY",
-  ])?.replace(
-    /\\n/g,
-    "\n",
-  );
+  ])?.replace(/\\n/g, "\n");
   const privateKeyB64 = getEnvAny([
     "FIREBASE_ADMIN_PRIVATE_KEY_B64",
     "FIREBASE_ADMIN_PRIVATE_KEY_B64",
   ]);
   const privateKeyFromB64 = privateKeyB64
-    ? Buffer.from(
-        privateKeyB64,
-        "base64",
-      ).toString("utf8")
+    ? Buffer.from(privateKeyB64, "base64").toString("utf8")
     : null;
 
   const privateKey = privateKeyFromPlain || privateKeyFromB64;

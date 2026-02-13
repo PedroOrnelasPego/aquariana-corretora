@@ -80,7 +80,12 @@ ImovelCard.propTypes = {
 const Vendas = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImovel, setSelectedImovel] = useState(null);
-  const [imoveis, setImoveis] = useState(imoveisVendasData);
+  const [imoveis, setImoveis] = useState(() => {
+    // Em produção, não queremos mostrar dados mockados por engano.
+    // Se o Firebase estiver desabilitado (VITE_FIREBASE_* ausentes), usamos mock só em DEV.
+    if (!isFirebaseEnabled) return import.meta.env.DEV ? imoveisVendasData : [];
+    return [];
+  });
   const [loadingImoveis, setLoadingImoveis] = useState(isFirebaseEnabled);
   const [imoveisError, setImoveisError] = useState(null);
 
@@ -110,7 +115,14 @@ const Vendas = () => {
     let mounted = true;
 
     const load = async () => {
-      if (!isFirebaseEnabled) return;
+      if (!isFirebaseEnabled) {
+        if (mounted && !import.meta.env.DEV) {
+          setImoveisError(
+            "Firebase não configurado no build. Configure VITE_FIREBASE_* nas variáveis de ambiente do projeto (Vercel) e publique novamente.",
+          );
+        }
+        return;
+      }
       setImoveisError(null);
       setLoadingImoveis(true);
       try {
